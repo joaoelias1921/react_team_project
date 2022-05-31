@@ -15,14 +15,40 @@
       </section>
       <section class="navigation">
         <div class="nav-buttons">
-          <button class="nav-btn selected-btn">Basic</button>
-          <button class="nav-btn">Social</button>
+          <button class="nav-btn">Basic</button>
+          <button class="nav-btn selected-btn">Social</button>
           <button class="nav-btn">Certificates</button>
         </div>
       </section>
     </header>
-    <div class="container">
-      <button type="button">Next <img src="/Vector.png" alt="" /></button>
-    </div>
+    <main>
+      <div class="form-container">
+        <div class="form">
+          <div class="form-group">
+            <label for="full-name">LinkedIn</label>
+            <input
+              type="text"
+              placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+              id="linkdin-link"
+              required
+              autofocus
+            />
+          </div>
+          <div class="form-group">
+            <label for="nickname">Github *</label>
+            <input
+              type="text"
+              placeholder="https://github.com/foobar"
+              id="github-link"
+            />
+          </div>
+          <div class="form-footer">
+            <div class="btn-container">
+              <button class="continue-btn" type="submit">Next</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
