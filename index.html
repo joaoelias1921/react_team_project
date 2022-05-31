@@ -9,8 +9,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
-    <title>React Project</title>
+    <title>React Team Project</title>
 </head>
-<body class="container">
+<body>
+    <header class="top-content">
+        <section class="main-title">
+            <h1>Team Sign Up</h1>
+        </section>
+        <section class="navigation">
+            <div class="nav-buttons">
+                <button class="nav-btn selected-btn">Basic</button>
+                <button class="nav-btn">Social</button>
+                <button class="nav-btn">Certificates</button>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="form-container">
+            <form class="form" onsubmit="">
+                <div class="form-group">
+                    <label for="full-name">Full Name *</label>
+                    <input type="text" placeholder="Foo Bar" id="full-name" required autofocus>
+                </div>
+                <div class="form-group">
+                    <label for="nickname">Nickname</label>
+                    <input type="text" placeholder="Juanito" id="nickname">
+                </div>
+                <div class="form-group row">
+                    <div class="form-email">
+                        <label for="email">Email *</label>
+                        <input type="email" placeholder="foo@bar.com" id="email" required>
+                    </div>
+                    <div class="form-phone">
+                        <label for="phone">Phone</label>
+                        <input type="text" placeholder="(83) 00000-0000" id="phone">
+                    </div>
+                </div>
+                <fieldset class="birthdate-age">
+                    <div class="birthdate-title">
+                        <h2>Birthday *</h2>
+                    </div>                    
+
+                    <div class="birthdate-data">
+                        <div class="birth-group">
+                            <label for="day">Day</label>
+                            <select id="day" name="dd" required>
+                                <option value="">Day</option>
+                            </select>
+                        </div>
+
+                        <div class="birth-group">
+                            <label for="month">Month</label>
+                            <select id="month" name="mm" onchange="change_month(this)" required>
+                                <option value="">Month</option>
+                            </select>
+                        </div>
+
+                        <div class="birth-group">
+                            <label for="year">Year</label>
+                            <select id="year" name="yyyy" onchange="change_year(this)" required>
+                                <option value="">Year</option>
+                            </select>
+                        </div>                        
+
+                        <div class="birth-group age">
+                            <label for="age">Age</label>
+                            <input type="number" placeholder="18" disabled>
+                        </div>
+                    </div>
+                </fieldset>
+                
+                <div class="form-footer">
+                    <div class="check-group">
+                        <input type="checkbox" id="terms-check">
+                        <label for="terms-check">I accept the terms and privacy</label>
+                    </div>
+                    <div class="btn-container">
+                        <button class="continue-btn" type="submit">Next</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="./js/lib/index.js"></script>
 </body>
 </html>
