@@ -1,1 +1,273 @@
 @import '../abstract/variables';
+
+.top-content {
+    @include centered();
+    width: 100%;
+    .main-title {
+        width: 60%;
+        h1 {
+            font-weight: bold;
+            font-size: 1.2rem;
+            text-align: left;
+            padding: 3% 0 3% 0;
+        }
+    }
+    .navigation {
+        @include centered();
+        flex-direction: row;
+        width: 100%;
+        margin-bottom: 3%;
+        .nav-buttons {
+            @include centered();
+            flex-direction: row;
+            width: 60%;
+            .nav-btn {
+                width: 35%;
+                padding: 15px;
+                background-color: white;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid $secondaryColor;
+                cursor: pointer;
+                &:hover {
+                    background-color: rgb(236, 236, 255);
+                    transition: 360ms ease-in-out;
+                }
+            }
+            
+            .selected-btn {
+                border-bottom: 2px solid $primaryColor;
+                color: $primaryColor;
+            }
+        }
+    }
+}
+
+.form-container {
+    @include centered();
+    .form {
+        @include centered();
+        width: 60%;
+        .form-group {
+            @include centered();
+            margin-bottom: 3%;
+            width: 100%;
+            label {
+                align-self: flex-start;
+                font-size: small;
+                color: gray;
+                margin-bottom: 0.5%;                
+            }
+            input {
+                width: 100%;
+                align-self: flex-start;
+                padding: 10px 0 10px 10px;
+                outline: none;
+                border: 2px solid rgb(182, 180, 180);
+                border-radius: 5px;
+                &:hover {
+                    background-color: rgb(240, 240, 240);
+                    transition: 240ms ease-in-out;
+                }
+            }
+        }
+        .row {
+            flex-direction: row;
+            margin-bottom: 5%;
+            .form-email {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                label {
+                    align-self: flex-start;
+                }
+                input {
+                    width: 85%;
+                }
+            }
+
+            .form-phone {
+                display: flex;
+                flex-direction: column;
+                width: 30%;
+                label {
+                    align-self: flex-start;
+                    margin-bottom: 0.5%;
+                }
+                input {
+                    align-self: flex-start;
+                    width: 100%;
+                }
+            }
+        }
+        .birthdate-age {
+            @include centered();
+            width: 100%;
+            .birthdate-title {
+                width: 100%;
+                h2 {
+                    text-align: left;
+                    font-size: 1rem;
+                    color: gray;
+                    margin-bottom: 2%;
+                }
+            }
+            .birthdate-data {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5%;
+                .birth-group {
+                    @include centered();
+                    width: 20%;
+                    label {
+                        align-self: flex-start;
+                        font-size: small;
+                        color: gray;
+                        margin-bottom: 2%;
+                    }
+                    select {
+                        width: 100%;
+                        align-self: flex-start;
+                        outline: none;
+                        padding: 10px;
+                        border: 2px solid rgb(182, 180, 180);
+                        border-radius: 5px;
+                        color: gray;
+                    }                    
+                }
+                .age {
+                    input {
+                        width: 100%;
+                        outline: none;
+                        padding: 10px 0 10px 10px;
+                        border: 2px solid rgb(182, 180, 180);
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        .form-footer {
+            @include centered();
+            width: 100%;
+            .check-group {
+                @include centered();
+                flex-direction: row;
+                width: 100%;
+                align-items: center;
+                justify-content: flex-start;
+                #terms-check {
+                    transform: scale(1.6);
+                    margin-right: 2%;
+                    outline: none;
+                    &:checked{
+                        box-shadow: 0 3px 5px 0 rgb(182, 182, 182);
+                    }
+                }        
+            }
+            .btn-container {
+                @include centered();
+                width: 100%;
+                .continue-btn {
+                    align-self: flex-end;
+                    padding: 10px 30px 10px 10px;
+                    background-color: $primaryColor;
+                    background-image: url(../../images/white-arrow.png);
+                    background-repeat: no-repeat;
+                    background-position: center right 10px;
+                    color: white;
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    border-radius: 5px;
+                    &:hover {
+                        background-color: $primaryColor*0.8;
+                        transition: 240ms ease-in-out;                        
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    * {
+        font-size: 0.8rem;
+    }
+    .top-content {
+        .main-title {
+            width: 80%;
+            h1 {
+                padding: 5% 0 3% 0;
+            }
+        }
+        .navigation {
+            .nav-buttons {
+                width: 80%;
+            }
+        }
+    }
+
+    .form-container {
+        .form {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 425px){
+    * {
+        font-size: 0.7rem;
+    }
+    .top-content {
+        .main-title {
+            h1 {
+                padding: 10% 0 3% 0;
+            }
+        }
+        .navigation {
+            margin-bottom: 5%;
+        }
+    }
+
+    .form-container {
+        .form {
+            .form-group {
+                margin-bottom: 7%;            
+            }       
+        
+            .birthdate-age {
+                margin-bottom: 5%;
+                .birthdate-title {
+                    margin-bottom: 1%;
+                }
+                .birthdate-data {
+                    .birth-group {    
+                        width: 23%;                
+                    }
+                }
+            }
+            .form-footer {
+                .check-group {
+                    margin-bottom: 3%;
+                    #terms-check {
+                        margin-right: 3%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    * {
+        font-size: 0.6rem;
+    }
+    .top-content {
+        .main-title {
+            h1 {
+                padding: 10% 0 8% 0;
+            }
+        }
+    }
+}

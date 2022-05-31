@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <title>React Team Project</title>
+</head>
+<body>
+    <header class="top-content">
+        <section class="main-title">
+            <h1>Team Sign Up</h1>
+        </section>
+        <section class="navigation">
+            <div class="nav-buttons">
+                <button class="nav-btn">Basic</button>
+                <button class="nav-btn">Social</button>
+                <button class="nav-btn selected-btn">Certificates</button>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="form-container">
+            <form class="form" onsubmit="">
+                <div class="form-group">
+                    <label for="full-name">Certificates</label>
+                    <input type="text" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" id="full-name" required autofocus>
+                </div>
+
+                <div class="btn-container">
+                    <button class="continue-btn" type="submit">Finish</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="nickname">Team Name *</label>
+                    <input type="text" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" id="nickname">
+                </div>
+
+                <div class="form-group">
+                    <label for="nickname">Institution *</label>
+                    <input type="text" placeholder="Universidade Federal da Paraíba" id="nickname">
+                </div>
+
+                <div class="form-group">
+                    <label for="nickname">Graduation *</label>
+                    <input type="text" placeholder="Ciências da Computação" id="nickname">
+                </div>
+
+                <div class="form-footer">
+                    <div class="btn-container">
+                        <button class="continue-btn" type="submit">Finish</button>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="./js/lib/index.js"></script>
+</body>
+</html>
