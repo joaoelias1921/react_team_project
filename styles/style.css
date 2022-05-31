@@ -460,6 +460,27 @@ html, body {
     font-size: 0.6rem;
   }
   .top-content .main-title h1 {
+    padding: 5% 0 8% 0;
+  }
+  .form-container .form .form-group input {
+    padding: 8px;
+  }
+  .form-container .form .birthdate-age .birthdate-data {
+    margin: 0;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .form-container .form .birthdate-age .birthdate-data .birth-group {
+    width: 35%;
+  }
+  .form-container .form .birthdate-age .birthdate-data .birth-group select {
+    padding: 8px;
+    margin-bottom: 5%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .top-content .main-title h1 {
     padding: 10% 0 8% 0;
   }
 }

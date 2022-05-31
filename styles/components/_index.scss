@@ -266,6 +266,38 @@
     .top-content {
         .main-title {
             h1 {
+                padding: 5% 0 8% 0;
+            }
+        }
+    }
+    .form-container {
+        .form {
+            .form-group {
+                input {
+                    padding: 8px;
+                }
+            }
+            .birthdate-age {
+                .birthdate-data {
+                    margin: 0;
+                    flex-wrap: wrap;
+                    .birth-group {
+                        width: 35%;
+                        select {
+                            padding: 8px;
+                            margin-bottom: 5%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .top-content {
+        .main-title {
+            h1 {
                 padding: 10% 0 8% 0;
             }
         }
