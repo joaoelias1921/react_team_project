@@ -54,27 +54,24 @@
                         <div class="birth-group">
                             <label for="day">Day</label>
                             <select id="day" name="dd" required>
-                                <option value="">Day</option>
                             </select>
                         </div>
 
                         <div class="birth-group">
                             <label for="month">Month</label>
-                            <select id="month" name="mm" onchange="change_month(this)" required>
-                                <option value="">Month</option>
+                            <select id="month" name="mm" onchange="change_month(this)" required disabled>
                             </select>
                         </div>
 
                         <div class="birth-group">
                             <label for="year">Year</label>
-                            <select id="year" name="yyyy" onchange="change_year(this)" required>
-                                <option value="">Year</option>
+                            <select id="year" name="yyyy" onchange="change_year(this)" required disabled>
                             </select>
                         </div>                        
 
                         <div class="birth-group age">
                             <label for="age">Age</label>
-                            <input type="number" placeholder="18" disabled>
+                            <input id="age" type="number" placeholder="0" disabled>
                         </div>
                     </div>
                 </fieldset>
@@ -92,6 +89,7 @@
         </section>
     </main>
 
+    <script src="./js/lib/dobPopulation.js"></script>
     <script src="./js/lib/index.js"></script>
 </body>
 </html>
