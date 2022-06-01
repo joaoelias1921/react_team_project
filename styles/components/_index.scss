@@ -38,6 +38,7 @@
             .selected-btn {
                 border-bottom: 2px solid $primaryColor;
                 color: $primaryColor;
+                transition: 360ms ease-in-out;
             }
         }
     }
@@ -45,7 +46,7 @@
 
 .form-container {
     @include centered();
-    .form {
+    .form1, .form2 {
         @include centered();
         width: 60%;
         .form-group {
@@ -203,7 +204,7 @@
     }
 
     .form-container {
-        .form {
+        .form1, .form2 {
             width: 80%;
         }
     }
@@ -225,7 +226,7 @@
     }
 
     .form-container {
-        .form {
+        .form1, .form2 {
             .form-group {
                 margin-bottom: 7%;            
             }       
@@ -265,7 +266,7 @@
         }
     }
     .form-container {
-        .form {
+        .form1, .form2 {
             .form-group {
                 input {
                     padding: 8px;

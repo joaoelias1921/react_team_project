@@ -98,6 +98,8 @@ html, body {
 .top-content .navigation .nav-buttons .selected-btn {
   border-bottom: 2px solid #074EE8;
   color: #074EE8;
+  -webkit-transition: 360ms ease-in-out;
+  transition: 360ms ease-in-out;
 }
 
 .form-container {
@@ -117,7 +119,7 @@ html, body {
   text-align: center;
 }
 
-.form-container .form {
+.form-container .form1, .form-container .form2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +137,7 @@ html, body {
   width: 60%;
 }
 
-.form-container .form .form-group {
+.form-container .form1 .form-group, .form-container .form2 .form-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +156,7 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .form-group label {
+.form-container .form1 .form-group label, .form-container .form2 .form-group label {
   -ms-flex-item-align: start;
       align-self: flex-start;
   font-size: small;
@@ -162,7 +164,7 @@ html, body {
   margin-bottom: 0.5%;
 }
 
-.form-container .form .form-group input {
+.form-container .form1 .form-group input, .form-container .form2 .form-group input {
   width: 100%;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -172,13 +174,13 @@ html, body {
   border-radius: 5px;
 }
 
-.form-container .form .form-group input:hover {
+.form-container .form1 .form-group input:hover, .form-container .form2 .form-group input:hover {
   background-color: #f0f0f0;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
 }
 
-.form-container .form .row {
+.form-container .form1 .row, .form-container .form2 .row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -189,7 +191,7 @@ html, body {
   margin-bottom: 5%;
 }
 
-.form-container .form .row .form-email {
+.form-container .form1 .row .form-email, .form-container .form2 .row .form-email {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,11 +202,11 @@ html, body {
   width: 65%;
 }
 
-.form-container .form .row .form-email input {
+.form-container .form1 .row .form-email input, .form-container .form2 .row .form-email input {
   width: 100%;
 }
 
-.form-container .form .row .form-phone {
+.form-container .form1 .row .form-phone, .form-container .form2 .row .form-phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,13 +217,13 @@ html, body {
   width: 30%;
 }
 
-.form-container .form .row .form-phone input {
+.form-container .form1 .row .form-phone input, .form-container .form2 .row .form-phone input {
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 100%;
 }
 
-.form-container .form .birthdate-age {
+.form-container .form1 .birthdate-age, .form-container .form2 .birthdate-age {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,18 +241,18 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title {
+.form-container .form1 .birthdate-age .birthdate-title, .form-container .form2 .birthdate-age .birthdate-title {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title h2 {
+.form-container .form1 .birthdate-age .birthdate-title h2, .form-container .form2 .birthdate-age .birthdate-title h2 {
   text-align: left;
   font-size: 1rem;
   color: gray;
   margin-bottom: 2%;
 }
 
-.form-container .form .birthdate-age .birthdate-data {
+.form-container .form1 .birthdate-age .birthdate-data, .form-container .form2 .birthdate-age .birthdate-data {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,7 +263,7 @@ html, body {
   margin-bottom: 5%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,7 +281,7 @@ html, body {
   width: 20%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group label {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group label, .form-container .form2 .birthdate-age .birthdate-data .birth-group label {
   -ms-flex-item-align: start;
       align-self: flex-start;
   font-size: small;
@@ -287,7 +289,7 @@ html, body {
   margin-bottom: 2%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group select {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group select, .form-container .form2 .birthdate-age .birthdate-data .birth-group select {
   width: 100%;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -298,7 +300,7 @@ html, body {
   color: gray;
 }
 
-.form-container .form .birthdate-age .birthdate-data .age input {
+.form-container .form1 .birthdate-age .birthdate-data .age input, .form-container .form2 .birthdate-age .birthdate-data .age input {
   width: 100%;
   outline: none;
   padding: 10px 0 10px 10px;
@@ -306,7 +308,7 @@ html, body {
   border-radius: 5px;
 }
 
-.form-container .form .form-footer {
+.form-container .form1 .form-footer, .form-container .form2 .form-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -324,7 +326,7 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .form-footer .check-group {
+.form-container .form1 .form-footer .check-group, .form-container .form2 .form-footer .check-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,19 +350,19 @@ html, body {
           justify-content: flex-start;
 }
 
-.form-container .form .form-footer .check-group #terms-check {
+.form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check {
   -webkit-transform: scale(1.6);
           transform: scale(1.6);
   margin-right: 2%;
   outline: none;
 }
 
-.form-container .form .form-footer .check-group #terms-check:checked {
+.form-container .form1 .form-footer .check-group #terms-check:checked, .form-container .form2 .form-footer .check-group #terms-check:checked {
   -webkit-box-shadow: 0 3px 5px 0 #b6b6b6;
           box-shadow: 0 3px 5px 0 #b6b6b6;
 }
 
-.form-container .form .form-footer .btn-container {
+.form-container .form1 .form-footer .btn-container, .form-container .form2 .form-footer .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,7 +380,7 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .form-footer .btn-container .continue-btn {
+.form-container .form1 .form-footer .btn-container .continue-btn, .form-container .form2 .form-footer .btn-container .continue-btn {
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding: 10px 30px 10px 10px;
@@ -393,7 +395,7 @@ html, body {
   border-radius: 5px;
 }
 
-.form-container .form .form-footer .btn-container .continue-btn:hover {
+.form-container .form1 .form-footer .btn-container .continue-btn:hover, .form-container .form2 .form-footer .btn-container .continue-btn:hover {
   background-color: #063eba;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
@@ -412,7 +414,7 @@ html, body {
   .top-content .navigation .nav-buttons {
     width: 80%;
   }
-  .form-container .form {
+  .form-container .form1, .form-container .form2 {
     width: 80%;
   }
 }
@@ -427,22 +429,22 @@ html, body {
   .top-content .navigation {
     margin-bottom: 5%;
   }
-  .form-container .form .form-group {
+  .form-container .form1 .form-group, .form-container .form2 .form-group {
     margin-bottom: 7%;
   }
-  .form-container .form .birthdate-age {
+  .form-container .form1 .birthdate-age, .form-container .form2 .birthdate-age {
     margin-bottom: 5%;
   }
-  .form-container .form .birthdate-age .birthdate-title {
+  .form-container .form1 .birthdate-age .birthdate-title, .form-container .form2 .birthdate-age .birthdate-title {
     margin-bottom: 1%;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group {
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group {
     width: 23%;
   }
-  .form-container .form .form-footer .check-group {
+  .form-container .form1 .form-footer .check-group, .form-container .form2 .form-footer .check-group {
     margin-bottom: 3%;
   }
-  .form-container .form .form-footer .check-group #terms-check {
+  .form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check {
     margin-right: 3%;
   }
 }
@@ -454,30 +456,30 @@ html, body {
   .top-content .main-title h1 {
     padding: 5% 0 8% 0;
   }
-  .form-container .form .form-group input {
+  .form-container .form1 .form-group input, .form-container .form2 .form-group input {
     padding: 8px;
   }
-  .form-container .form .row .form-email {
+  .form-container .form1 .row .form-email, .form-container .form2 .row .form-email {
     width: 60%;
   }
-  .form-container .form .row .form-email input {
+  .form-container .form1 .row .form-email input, .form-container .form2 .row .form-email input {
     padding-right: 0;
   }
-  .form-container .form .row .form-phone {
+  .form-container .form1 .row .form-phone, .form-container .form2 .row .form-phone {
     width: 35%;
   }
-  .form-container .form .row .form-phone input {
+  .form-container .form1 .row .form-phone input, .form-container .form2 .row .form-phone input {
     padding-right: 0;
   }
-  .form-container .form .birthdate-age .birthdate-data {
+  .form-container .form1 .birthdate-age .birthdate-data, .form-container .form2 .birthdate-age .birthdate-data {
     margin: 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group {
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group {
     width: 35%;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group select {
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group select, .form-container .form2 .birthdate-age .birthdate-data .birth-group select {
     padding: 8px;
     margin-bottom: 5%;
   }
