@@ -2,95 +2,85 @@ var btnMore = document.querySelector('.more-btn');
 
 var divCertificates = document.querySelector('.certificates');
 
-var inputCertificates = document.querySelector('#certificates');
+var input1 = document.querySelector('#certificates');
 
-var certificados = 0;
-var certificado1 = false;
-var certificado2 = false;
-var certificado3 = false;
-var certificado4 = false;
-var certificado5 = false;
-var btnapaga1;
+let dados = JSON.parse(localStorage.getItem('dados')) || [];
+renderizarPropostas();
 
-function criaBtn(){
+function renderizarPropostas(){
+    limpaTela();
+    for(let i = 0; i < dados.length; i++){
+        const father = document.querySelector('.certificates');
+            let div = document.createElement('div');
+            let btn1 = document.createElement('button');
+            let btn2 = document.createElement('button');
+            let campo = document.createElement('input');
+            div.setAttribute('class','form-group cert');
+            btn1.setAttribute('class','delete');
+            btn2.setAttribute('class','edit');
+            campo.setAttribute('placeholder',`${dados[i].propostas}`);
+            campo.setAttribute("disabled", "disabled");
+                div.appendChild(campo)
+                div.appendChild(btn1);
+                div.appendChild(btn2);
+                father.appendChild(div);
+
+
+            btn1.onclick = function(event){
+                event.preventDefault();
+                deletarProposta(i);
+                if(dados.length == 0){
+                    grupo.innerHTML = '';
+                }
+            }
+
+            btn2.onclick = function(event){
+                event.preventDefault();
+                concluirProposta(i);
+                if(dados.length == 0){
+                    grupo.innerHTML = '';
+                }
+            }
+    }
 
 }
+    
 
 
-function addCertificate(event) {
-
-event.preventDefault();
-
-    if(certificados<5){
-        let div = document.createElement('div');
-        if(certificado1 == false){
-
-            div.innerHTML = `
-            <div class="form-group cert">
-            <input type="text" placeholder="${inputCertificates.value}" id="certificado1" disabled>
-            <a id="delete1" class="delete"><i class="fas fa-trash"></i></a>
-            <a id="edit" class="edit"><i class="fas fa-pencil-alt"></i></a>
-            </div>
-                            `;
-                            certificado1 = true;
-                            criaBtn('#delete1');
-        }else if(certificado2 == false){
-
-            div.innerHTML = `
-            <div class="form-group cert">
-            <input type="text" placeholder="${inputCertificates.value}" id="certificado2" disabled>
-            <a id="delete" class="delete"><i class="fas fa-trash"></i></a>
-            <a id="edit" class="edit"><i class="fas fa-pencil-alt"></i></a>
-            </div>
-                            `;
-                            certificado2 = true; 
-        }else if(certificado3 == false){
-            
-            div.innerHTML = `
-            <div class="form-group cert">
-            <input type="text" placeholder="${inputCertificates.value}" id="certificado3" disabled>
-            <a id="delete" class="delete"><i class="fas fa-trash"></i></a>
-            <a id="edit" class="edit"><i class="fas fa-pencil-alt"></i></a>
-            </div>
-                            `;
-                            certificado3 = true; 
-        }
-        else if(certificado4 == false){
-            
-            div.innerHTML = `
-            <div class="form-group cert">
-            <input type="text" placeholder="${inputCertificates.value}" id="certificado4" disabled>
-            <a id="delete" class="delete"><i class="fas fa-trash"></i></a>
-            <a id="edit" class="edit"><i class="fas fa-pencil-alt"></i></a>
-            </div>
-                            `;
-                            certificado4 = true; 
-        }   
-        else if(certificado5 == false){
-            
-            div.innerHTML = `
-            <div class="form-group cert">
-            <input type="text" placeholder="${inputCertificates.value}" id="certificado5" disabled>
-            <a id="delete" class="delete"><i class="fas fa-trash"></i></a>
-            <a id="edit" class="edit"><i class="fas fa-pencil-alt"></i></a>
-            </div>
-                            `;
-                            certificado5 = true; 
-        }
-        
-
-        const father = document.querySelector('.certificates');
-        father.appendChild(div);
-        certificados++;
-
-    }else{
-        alert("excedeu");
+    btnMore.onclick = function(event){
+        event.preventDefault();
+        let proposta1 = input1.value;
+            dados.push({propostas: proposta1, indice: dados.length});
+            renderizarPropostas(this);
+            input1.value = '';
+            salvarDadosNostorage();
     }
+
+
+    
+
+    function concluirProposta(indice){
+        historico.push(dados[indice]);
+        dados.splice(indice, 1);
+        renderizarPropostas();
+        salvarDadosNostorage();
+    }
+
+function deletarProposta(indice){
+    dados.splice(indice, 1);
+    renderizarPropostas();
+    salvarDadosNostorage();
+}
+
+function salvarDadosNostorage(){
+    localStorage.setItem('dados',JSON.stringify(dados));
 }
 
 function deleteCertificate(){
         alert('element');
 };
 
-btnMore.addEventListener('click',addCertificate);
-
+function limpaTela(){
+    const father = document.querySelector('.certificates');
+    father.innerHTML = '';
+}
