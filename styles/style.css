@@ -185,6 +185,13 @@ html, body {
 .form-container .form .certificates {
   width: 100%;
   padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .form-container .form .cert {
@@ -393,6 +400,16 @@ html, body {
 .form-container .form .requireds {
   width: 100%;
   margin-top: 68px;
+}
+
+#heart {
+  font-size: 20px;
+  padding: 10px 10px 0 0;
+}
+
+#heart-selected {
+  font-size: 20px;
+  color: red;
 }
 
 @media screen and (max-width: 768px) {

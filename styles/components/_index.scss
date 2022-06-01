@@ -78,6 +78,8 @@
         .certificates{
             width: 100%;
             padding-top: 20px;
+            display: flex;
+            flex-direction: column;
         }
         .cert{
             display: flex;
@@ -199,6 +201,16 @@
         }
     }
 }
+
+#heart{
+    font-size: 20px;
+    padding: 10px 10px 0 0;
+}
+#heart-selected{
+    font-size: 20px;
+    color:red;
+}
+
 
 @media screen and (max-width: 768px){
     * {
