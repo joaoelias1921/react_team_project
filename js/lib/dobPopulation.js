@@ -85,7 +85,7 @@ function change_month(select) {
 
     day.innerHTML = "";
 
-    let option = '';
+    let option = '<option value="">Day</option>';
     let month = parseInt(select.value) - 1;
 
     for (let i = 1; i <= days[month]; i++){
@@ -118,7 +118,14 @@ function ageCalculator() {
     
     //calculate the age of the user  
     let age = Math.abs(yearFromDate - 1970);
+    if(age <= 18){
+        alert("You must be at least 18 years old to proceed!");
+        day.value = "";
+        month.value = "";
+        year.value = "";
+        $("#age").value = 0;
+    }
     
-    //display the calculated age  
+    //display the calculated age
     $("#age").value = age;
 }  
