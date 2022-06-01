@@ -7,6 +7,15 @@ function changeGithubLink() {
   document.getElementById("github-link").value = localStorage.getItem("github");
 }
 
+// function if the github link is null then it will put a red border around github link input
+document
+  .getElementsByClassName("continue-btn")[0]
+  .addEventListener("click", (event) => {
+    if (document.getElementById("github-link").value == "") {
+      document.getElementById("github-link").style.border = "1px solid red";
+    }
+  });
+
 // putting the local storage values in the input fields
 changeLinkdinLink();
 changeGithubLink();
