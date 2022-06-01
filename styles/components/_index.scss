@@ -73,16 +73,14 @@
         }
         .row {
             flex-direction: row;
+            justify-content: space-between;
             margin-bottom: 5%;
             .form-email {
                 display: flex;
                 flex-direction: column;
-                width: 70%;
-                label {
-                    align-self: flex-start;
-                }
+                width: 65%;
                 input {
-                    width: 85%;
+                    width: 100%;
                 }
             }
 
@@ -90,10 +88,6 @@
                 display: flex;
                 flex-direction: column;
                 width: 30%;
-                label {
-                    align-self: flex-start;
-                    margin-bottom: 0.5%;
-                }
                 input {
                     align-self: flex-start;
                     width: 100%;
@@ -277,6 +271,22 @@
                     padding: 8px;
                 }
             }
+
+            .row {
+                .form-email {
+                    width: 60%;
+                    input {
+                        padding-right: 0;
+                    }
+                }
+                .form-phone {
+                    width: 35%;
+                    input {
+                        padding-right: 0;
+                    }
+                }
+            }
+
             .birthdate-age {
                 .birthdate-data {
                     margin: 0;

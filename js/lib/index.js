@@ -18,6 +18,5 @@ function verifyEmail(email) {
         email.value = "";
         localStorage.removeItem("email");
         alert("Please input a valid email address!");
-        return;
     }
 }

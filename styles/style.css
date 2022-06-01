@@ -183,6 +183,9 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 5%;
 }
 
@@ -194,16 +197,11 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 70%;
-}
-
-.form-container .form .row .form-email label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+  width: 65%;
 }
 
 .form-container .form .row .form-email input {
-  width: 85%;
+  width: 100%;
 }
 
 .form-container .form .row .form-phone {
@@ -215,12 +213,6 @@ html, body {
       -ms-flex-direction: column;
           flex-direction: column;
   width: 30%;
-}
-
-.form-container .form .row .form-phone label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-bottom: 0.5%;
 }
 
 .form-container .form .row .form-phone input {
@@ -464,6 +456,18 @@ html, body {
   }
   .form-container .form .form-group input {
     padding: 8px;
+  }
+  .form-container .form .row .form-email {
+    width: 60%;
+  }
+  .form-container .form .row .form-email input {
+    padding-right: 0;
+  }
+  .form-container .form .row .form-phone {
+    width: 35%;
+  }
+  .form-container .form .row .form-phone input {
+    padding-right: 0;
   }
   .form-container .form .birthdate-age .birthdate-data {
     margin: 0;
