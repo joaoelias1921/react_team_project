@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/styles/reset.css" />
-    <link rel="stylesheet" href="/styles/style.css" />
+    <link rel="stylesheet" href="styles/reset.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <title>Second tab</title>
   </head>
   <body>
@@ -30,6 +30,9 @@
               type="text"
               placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
               id="linkdin-link"
+              onkeypress="verifyLinkdinLink()"
+              onkeydown="verifyLinkdinLink()"
+              onkeyup="verifyLinkdinLink()"
               required
               autofocus
             />
@@ -40,6 +43,9 @@
               type="text"
               placeholder="https://github.com/foobar"
               id="github-link"
+              onkeypress="verifyGithubLink()"
+              onkeydown="verifyGithubLink()"
+              onkeyup="verifyGithubLink()"
             />
           </div>
           <div class="form-footer">
@@ -50,5 +56,6 @@
         </div>
       </div>
     </main>
+    <script src="js/main.js"></script>
   </body>
 </html>
