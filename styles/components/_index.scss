@@ -71,82 +71,61 @@
                 }
             }
         }
-        .row {
+        .certificates{
+            width: 100%;
+            padding-top: 20px;
+        }
+        .cert{
+            display: flex;
             flex-direction: row;
-            margin-bottom: 5%;
-            .form-email {
-                display: flex;
-                flex-direction: column;
-                width: 70%;
-                label {
-                    align-self: flex-start;
-                }
-                input {
-                    width: 85%;
-                }
+            align-items: stretch;
+            .delete{
+                font-size: 15px;
+                padding: 10px 15px 10px 15px;
+                color: rgba(255, 0, 0, 0.5);;;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
             }
-
-            .form-phone {
-                display: flex;
-                flex-direction: column;
-                width: 30%;
-                label {
-                    align-self: flex-start;
-                    margin-bottom: 0.5%;
-                }
-                input {
-                    align-self: flex-start;
-                    width: 100%;
-                }
+            .edit{
+                font-size: 15px;
+                padding: 10px 15px 10px 15px;
+                color: rgba(0, 0, 0, 0.5);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
             }
         }
-        .birthdate-age {
+        //Button Add Certificates
+        .btn-container {
             @include centered();
             width: 100%;
-            .birthdate-title {
-                width: 100%;
-                h2 {
-                    text-align: left;
-                    font-size: 1rem;
-                    color: gray;
-                    margin-bottom: 2%;
-                }
-            }
-            .birthdate-data {
-                width: 100%;
+            .more-btn {
+                align-self: flex-end;
+                padding: 10px 10px 10px 10px;
+                background-color: $primaryColor;
+                color: white;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
                 display: flex;
-                justify-content: space-between;
-                margin-bottom: 5%;
-                .birth-group {
-                    @include centered();
-                    width: 20%;
-                    label {
-                        align-self: flex-start;
-                        font-size: small;
-                        color: gray;
-                        margin-bottom: 2%;
-                    }
-                    select {
-                        width: 100%;
-                        align-self: flex-start;
-                        outline: none;
-                        padding: 10px;
-                        border: 2px solid rgb(182, 180, 180);
-                        border-radius: 5px;
-                        color: gray;
-                    }                    
+                align-items: center;
+                &:hover {
+                    background-color: $primaryColor*0.8;
+                    transition: 240ms ease-in-out;                        
                 }
-                .age {
-                    input {
-                        width: 100%;
-                        outline: none;
-                        padding: 10px 0 10px 10px;
-                        border: 2px solid rgb(182, 180, 180);
-                        border-radius: 5px;
-                    }
+                .add{
+                    padding-right: 7px;
+                }
+                .target{
+                    padding-left: 7px;
                 }
             }
         }
+
         .form-footer {
             @include centered();
             width: 100%;
@@ -170,7 +149,8 @@
                 width: 100%;
                 .continue-btn {
                     align-self: flex-end;
-                    padding: 10px 30px 10px 10px;
+                    padding: 10px 12px 10px 10px;
+                    margin-top: 57px;
                     background-color: $primaryColor;
                     background-image: url(../../images/white-arrow.png);
                     background-repeat: no-repeat;
@@ -182,10 +162,17 @@
                     border-radius: 5px;
                     &:hover {
                         background-color: $primaryColor*0.8;
-                        transition: 240ms ease-in-out;                        
+                        transition: 240ms ease-in-out;                     
                     }
+                    img{
+                        padding-right: 9px;
+                    }   
                 }
             }
+        }
+        .requireds{
+            width: 100%;
+            margin-top: 68px;
         }
     }
 }

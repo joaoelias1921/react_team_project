@@ -178,58 +178,45 @@ html, body {
   transition: 240ms ease-in-out;
 }
 
-.form-container .form .row {
+.form-container .form .certificates {
+  width: 100%;
+  padding-top: 20px;
+}
+
+.form-container .form .cert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  margin-bottom: 5%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
 }
 
-.form-container .form .row .form-email {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 70%;
+.form-container .form .cert .delete {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  color: rgba(255, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.form-container .form .row .form-email label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+.form-container .form .cert .edit {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.form-container .form .row .form-email input {
-  width: 85%;
-}
-
-.form-container .form .row .form-phone {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 30%;
-}
-
-.form-container .form .row .form-phone label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  margin-bottom: 0.5%;
-}
-
-.form-container .form .row .form-phone input {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  width: 100%;
-}
-
-.form-container .form .birthdate-age {
+.form-container .form .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -247,71 +234,36 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title {
-  width: 100%;
-}
-
-.form-container .form .birthdate-age .birthdate-title h2 {
-  text-align: left;
-  font-size: 1rem;
-  color: gray;
-  margin-bottom: 2%;
-}
-
-.form-container .form .birthdate-age .birthdate-data {
-  width: 100%;
+.form-container .form .btn-container .more-btn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 10px 10px 10px 10px;
+  background-color: #074EE8;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin-bottom: 5%;
-}
-
-.form-container .form .birthdate-age .birthdate-data .birth-group {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  text-align: center;
-  width: 20%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group label {
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  font-size: small;
-  color: gray;
-  margin-bottom: 2%;
+.form-container .form .btn-container .more-btn:hover {
+  background-color: #063eba;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group select {
-  width: 100%;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
-  outline: none;
-  padding: 10px;
-  border: 2px solid #b6b4b4;
-  border-radius: 5px;
-  color: gray;
+.form-container .form .btn-container .more-btn .add {
+  padding-right: 7px;
 }
 
-.form-container .form .birthdate-age .birthdate-data .age input {
-  width: 100%;
-  outline: none;
-  padding: 10px 0 10px 10px;
-  border: 2px solid #b6b4b4;
-  border-radius: 5px;
+.form-container .form .btn-container .more-btn .target {
+  padding-left: 7px;
 }
 
 .form-container .form .form-footer {
@@ -389,7 +341,8 @@ html, body {
 .form-container .form .form-footer .btn-container .continue-btn {
   -ms-flex-item-align: end;
       align-self: flex-end;
-  padding: 10px 30px 10px 10px;
+  padding: 10px 12px 10px 10px;
+  margin-top: 57px;
   background-color: #074EE8;
   background-image: url(../../images/white-arrow.png);
   background-repeat: no-repeat;
@@ -405,6 +358,15 @@ html, body {
   background-color: #063eba;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
+}
+
+.form-container .form .form-footer .btn-container .continue-btn img {
+  padding-right: 9px;
+}
+
+.form-container .form .requireds {
+  width: 100%;
+  margin-top: 68px;
 }
 
 @media screen and (max-width: 768px) {
