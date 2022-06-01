@@ -5,6 +5,14 @@ let day = $("#day");
 let month = $("#month");
 let year = $("#year");
 
+day.addEventListener("change", () => {
+    month.removeAttribute("disabled");
+});
+
+month.addEventListener("change", () => {
+    year.removeAttribute("disabled");
+});
+
 function populateDays() {
     let option = '<option value="">Day</option>';
 
