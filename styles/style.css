@@ -178,6 +178,10 @@ html, body {
   transition: 240ms ease-in-out;
 }
 
+.form-container .form .ocult {
+  display: none;
+}
+
 .form-container .form .certificates {
   width: 100%;
   padding-top: 20px;
@@ -204,12 +208,29 @@ html, body {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form .cert .delete:hover {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.5);
 }
 
 .form-container .form .cert .edit {
   font-size: 15px;
   padding: 10px 15px 10px 15px;
   color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form .cert .edit2 {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  background-color: rgba(0, 102, 255, 0.384);
   outline: none;
   border: none;
   cursor: pointer;
@@ -232,6 +253,10 @@ html, body {
           align-items: center;
   text-align: center;
   width: 100%;
+}
+
+.form-container .form .btn-container .ocult {
+  display: none;
 }
 
 .form-container .form .btn-container .more-btn {
@@ -343,6 +368,7 @@ html, body {
       align-self: flex-end;
   padding: 10px 12px 10px 10px;
   margin-top: 57px;
+  margin-bottom: 50px;
   background-color: #074EE8;
   background-image: url(../../images/white-arrow.png);
   background-repeat: no-repeat;
@@ -424,5 +450,27 @@ html, body {
   .top-content .main-title h1 {
     padding: 10% 0 8% 0;
   }
+  .btn-container button {
+    width: 100%;
+  }
+  .btn-container #add {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
 }
 /*# sourceMappingURL=style.css.map */

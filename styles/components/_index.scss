@@ -69,7 +69,11 @@
                     background-color: rgb(240, 240, 240);
                     transition: 240ms ease-in-out;
                 }
+
             }
+        }
+        .ocult{
+            display: none;
         }
         .certificates{
             width: 100%;
@@ -82,16 +86,31 @@
             .delete{
                 font-size: 15px;
                 padding: 10px 15px 10px 15px;
-                color: rgba(255, 0, 0, 0.5);;;
+                color: rgba(255, 0, 0, 0.5);
                 outline: none;
                 border: none;
                 cursor: pointer;
                 border-radius: 5px;
+                background-color: white;
+                &:hover{
+                    color:  white;
+                    background-color:rgba(255, 0, 0, 0.5);
+                }
             }
             .edit{
                 font-size: 15px;
                 padding: 10px 15px 10px 15px;
                 color: rgba(0, 0, 0, 0.5);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: white;
+            }
+            .edit2{
+                font-size: 15px;
+                padding: 10px 15px 10px 15px;
+                background-color: rgba(0, 102, 255, 0.384);
                 outline: none;
                 border: none;
                 cursor: pointer;
@@ -102,6 +121,9 @@
         .btn-container {
             @include centered();
             width: 100%;
+            .ocult{
+                display: none;
+            }
             .more-btn {
                 align-self: flex-end;
                 padding: 10px 10px 10px 10px;
@@ -151,6 +173,7 @@
                     align-self: flex-end;
                     padding: 10px 12px 10px 10px;
                     margin-top: 57px;
+                    margin-bottom: 50px;
                     background-color: $primaryColor;
                     background-image: url(../../images/white-arrow.png);
                     background-repeat: no-repeat;
@@ -257,4 +280,13 @@
             }
         }
     }
+    .btn-container{
+        button{
+            width: 100%;
+        }
+        #add{
+            justify-content: center;
+        }
+    }
+    @include centered();
 }

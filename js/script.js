@@ -15,6 +15,15 @@ function renderizarPropostas(){
             let btn1 = document.createElement('button');
             let btn2 = document.createElement('button');
             let campo = document.createElement('input');
+
+            var icone1 = document.createElement('a');
+            var icone2 = document.createElement('a');
+            icone1.setAttribute("class","fas fa-trash");
+            icone2.setAttribute("class","fas fa-pencil-alt");
+            btn1.appendChild(icone1);
+            btn2.appendChild(icone2);
+
+
             div.setAttribute('class','form-group cert');
             btn1.setAttribute('class','delete');
             btn2.setAttribute('class','edit');
@@ -29,6 +38,8 @@ function renderizarPropostas(){
             btn1.onclick = function(event){
                 event.preventDefault();
                 deletarProposta(i);
+                recolocaInput();
+                renderizarPropostas();
                 if(dados.length == 0){
                     grupo.innerHTML = '';
                 }
@@ -36,16 +47,25 @@ function renderizarPropostas(){
 
             btn2.onclick = function(event){
                 event.preventDefault();
-                concluirProposta(i);
+                campo.removeAttribute("disabled");
+                campo.value = dados[i].propostas;
+                btn2.setAttribute("class","edit2");
+                btn2.firstChild.setAttribute("class","fas fa-check editing");
+                    btn2.onclick = (event)=>{
+                        event.preventDefault();
+                        dados[i].propostas = campo.value;
+                        salvarDadosNostorage();
+                        renderizarPropostas();
+                    }
                 if(dados.length == 0){
                     grupo.innerHTML = '';
                 }
             }
     }
-
+    if(dados.length == 5){
+        removeInput();
+    }
 }
-    
-
 
     btnMore.onclick = function(event){
         event.preventDefault();
@@ -55,9 +75,6 @@ function renderizarPropostas(){
             input1.value = '';
             salvarDadosNostorage();
     }
-
-
-    
 
     function concluirProposta(indice){
         historico.push(dados[indice]);
@@ -84,3 +101,16 @@ function limpaTela(){
     const father = document.querySelector('.certificates');
     father.innerHTML = '';
 }
+
+function removeInput(){
+    let btnMore = document.querySelector('.more-btn');
+    let inputCert = document.querySelector('#form1');
+    btnMore.setAttribute("class","ocult");
+    inputCert.setAttribute("class","ocult");
+}
+function recolocaInput(){
+    let inputCert = document.querySelector('#form1');
+    inputCert.setAttribute("class","form-group");
+    btnMore.setAttribute("class","more-btn");
+}
+
