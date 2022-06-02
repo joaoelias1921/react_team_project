@@ -1,6 +1,7 @@
 var tempNumber = 0;
 
 function changeValue() {
+  // definindo variaveis para puxar valor do local storage
   var fullname = localStorage.getItem("fullname");
   var nickname = localStorage.getItem("nickname");
   var email = localStorage.getItem("email");
@@ -15,6 +16,7 @@ function changeValue() {
   var institution = localStorage.getItem("institution");
   var graduation = localStorage.getItem("graduation");
 
+  // alterando valores da página list.html com as variaveis do local storage
   let nameValue =
     document.getElementsByClassName("name-value-name")[tempNumber];
   nameValue.innerHTML = fullname;
@@ -51,4 +53,5 @@ function changeValue() {
   )[tempNumber];
   graduationValue.innerHTML = graduation;
 }
+// após essa função ser executada, todos valores contidos no localStorage serão inseridos no card
 changeValue();
