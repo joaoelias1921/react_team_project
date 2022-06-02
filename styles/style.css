@@ -99,6 +99,8 @@ body {
 .top-content .navigation .nav-buttons .selected-btn {
   border-bottom: 2px solid #074ee8;
   color: #074ee8;
+  -webkit-transition: 360ms ease-in-out;
+  transition: 360ms ease-in-out;
 }
 
 .form-container {
@@ -118,7 +120,9 @@ body {
   text-align: center;
 }
 
-.form-container .form {
+.form-container .form1,
+.form-container .form2,
+.form-container .form3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -136,7 +140,9 @@ body {
   width: 60%;
 }
 
-.form-container .form .form-group {
+.form-container .form1 .form-group,
+.form-container .form2 .form-group,
+.form-container .form3 .form-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -155,7 +161,9 @@ body {
   width: 100%;
 }
 
-.form-container .form .form-group label {
+.form-container .form1 .form-group label,
+.form-container .form2 .form-group label,
+.form-container .form3 .form-group label {
   -ms-flex-item-align: start;
   align-self: flex-start;
   font-size: small;
@@ -163,7 +171,9 @@ body {
   margin-bottom: 0.5%;
 }
 
-.form-container .form .form-group input {
+.form-container .form1 .form-group input,
+.form-container .form2 .form-group input,
+.form-container .form3 .form-group input {
   width: 100%;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -173,21 +183,30 @@ body {
   border-radius: 5px;
 }
 
-.form-container .form .form-group input:hover {
+.form-container .form1 .form-group input:hover,
+.form-container .form2 .form-group input:hover,
+.form-container .form3 .form-group input:hover {
   background-color: #f0f0f0;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
 }
 
-.form-container .form .row {
+.form-container .form1 .row,
+.form-container .form2 .row,
+.form-container .form3 .row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   margin-bottom: 5%;
 }
 
-.form-container .form .row .form-email {
+.form-container .form1 .row .form-email,
+.form-container .form2 .row .form-email,
+.form-container .form3 .row .form-email {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -195,19 +214,18 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  width: 70%;
+  width: 65%;
 }
 
-.form-container .form .row .form-email label {
-  -ms-flex-item-align: start;
-  align-self: flex-start;
+.form-container .form1 .row .form-email input,
+.form-container .form2 .row .form-email input,
+.form-container .form3 .row .form-email input {
+  width: 100%;
 }
 
-.form-container .form .row .form-email input {
-  width: 85%;
-}
-
-.form-container .form .row .form-phone {
+.form-container .form1 .row .form-phone,
+.form-container .form2 .row .form-phone,
+.form-container .form3 .row .form-phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -218,19 +236,17 @@ body {
   width: 30%;
 }
 
-.form-container .form .row .form-phone label {
-  -ms-flex-item-align: start;
-  align-self: flex-start;
-  margin-bottom: 0.5%;
-}
-
-.form-container .form .row .form-phone input {
+.form-container .form1 .row .form-phone input,
+.form-container .form2 .row .form-phone input,
+.form-container .form3 .row .form-phone input {
   -ms-flex-item-align: start;
   align-self: flex-start;
   width: 100%;
 }
 
-.form-container .form .birthdate-age {
+.form-container .form1 .birthdate-age,
+.form-container .form2 .birthdate-age,
+.form-container .form3 .birthdate-age {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -248,18 +264,24 @@ body {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title {
+.form-container .form1 .birthdate-age .birthdate-title,
+.form-container .form2 .birthdate-age .birthdate-title,
+.form-container .form3 .birthdate-age .birthdate-title {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title h2 {
+.form-container .form1 .birthdate-age .birthdate-title h2,
+.form-container .form2 .birthdate-age .birthdate-title h2,
+.form-container .form3 .birthdate-age .birthdate-title h2 {
   text-align: left;
   font-size: 1rem;
   color: gray;
   margin-bottom: 2%;
 }
 
-.form-container .form .birthdate-age .birthdate-data {
+.form-container .form1 .birthdate-age .birthdate-data,
+.form-container .form2 .birthdate-age .birthdate-data,
+.form-container .form3 .birthdate-age .birthdate-data {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -270,7 +292,9 @@ body {
   margin-bottom: 5%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group,
+.form-container .form2 .birthdate-age .birthdate-data .birth-group,
+.form-container .form3 .birthdate-age .birthdate-data .birth-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -288,7 +312,9 @@ body {
   width: 20%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group label {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group label,
+.form-container .form2 .birthdate-age .birthdate-data .birth-group label,
+.form-container .form3 .birthdate-age .birthdate-data .birth-group label {
   -ms-flex-item-align: start;
   align-self: flex-start;
   font-size: small;
@@ -296,7 +322,9 @@ body {
   margin-bottom: 2%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group select {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group select,
+.form-container .form2 .birthdate-age .birthdate-data .birth-group select,
+.form-container .form3 .birthdate-age .birthdate-data .birth-group select {
   width: 100%;
   -ms-flex-item-align: start;
   align-self: flex-start;
@@ -307,7 +335,9 @@ body {
   color: gray;
 }
 
-.form-container .form .birthdate-age .birthdate-data .age input {
+.form-container .form1 .birthdate-age .birthdate-data .age input,
+.form-container .form2 .birthdate-age .birthdate-data .age input,
+.form-container .form3 .birthdate-age .birthdate-data .age input {
   width: 100%;
   outline: none;
   padding: 10px 0 10px 10px;
@@ -315,7 +345,9 @@ body {
   border-radius: 5px;
 }
 
-.form-container .form .form-footer {
+.form-container .form1 .form-footer,
+.form-container .form2 .form-footer,
+.form-container .form3 .form-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -333,7 +365,9 @@ body {
   width: 100%;
 }
 
-.form-container .form .form-footer .check-group {
+.form-container .form1 .form-footer .check-group,
+.form-container .form2 .form-footer .check-group,
+.form-container .form3 .form-footer .check-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -357,19 +391,25 @@ body {
   justify-content: flex-start;
 }
 
-.form-container .form .form-footer .check-group #terms-check {
+.form-container .form1 .form-footer .check-group #terms-check,
+.form-container .form2 .form-footer .check-group #terms-check,
+.form-container .form3 .form-footer .check-group #terms-check {
   -webkit-transform: scale(1.6);
   transform: scale(1.6);
   margin-right: 2%;
   outline: none;
 }
 
-.form-container .form .form-footer .check-group #terms-check:checked {
+.form-container .form1 .form-footer .check-group #terms-check:checked,
+.form-container .form2 .form-footer .check-group #terms-check:checked,
+.form-container .form3 .form-footer .check-group #terms-check:checked {
   -webkit-box-shadow: 0 3px 5px 0 #b6b6b6;
   box-shadow: 0 3px 5px 0 #b6b6b6;
 }
 
-.form-container .form .form-footer .btn-container {
+.form-container .form1 .form-footer .btn-container,
+.form-container .form2 .form-footer .btn-container,
+.form-container .form3 .form-footer .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -387,12 +427,20 @@ body {
   width: 100%;
 }
 
-.form-container .form .form-footer .btn-container .continue-btn {
+.form-container .form1 .form-footer .btn-container .continue-btn,
+.form-container .form1 .form-footer .btn-container .next-btn,
+.form-container .form1 .form-footer .btn-container .finish-btn,
+.form-container .form2 .form-footer .btn-container .continue-btn,
+.form-container .form2 .form-footer .btn-container .next-btn,
+.form-container .form2 .form-footer .btn-container .finish-btn,
+.form-container .form3 .form-footer .btn-container .continue-btn,
+.form-container .form3 .form-footer .btn-container .next-btn,
+.form-container .form3 .form-footer .btn-container .finish-btn {
   -ms-flex-item-align: end;
   align-self: flex-end;
   padding: 10px 30px 10px 10px;
   background-color: #074ee8;
-  background-image: url(../images/white-arrow.png);
+  background-image: url(../../images/white-arrow.png);
   background-repeat: no-repeat;
   background-position: center right 10px;
   color: white;
@@ -402,10 +450,190 @@ body {
   border-radius: 5px;
 }
 
-.form-container .form .form-footer .btn-container .continue-btn:hover {
+.form-container .form1 .form-footer .btn-container .continue-btn:hover,
+.form-container .form1 .form-footer .btn-container .next-btn:hover,
+.form-container .form1 .form-footer .btn-container .finish-btn:hover,
+.form-container .form2 .form-footer .btn-container .continue-btn:hover,
+.form-container .form2 .form-footer .btn-container .next-btn:hover,
+.form-container .form2 .form-footer .btn-container .finish-btn:hover,
+.form-container .form3 .form-footer .btn-container .continue-btn:hover,
+.form-container .form3 .form-footer .btn-container .next-btn:hover,
+.form-container .form3 .form-footer .btn-container .finish-btn:hover {
   background-color: #063eba;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
+}
+
+.form-container .form1 .form-footer .btn-container .continue-btn img,
+.form-container .form1 .form-footer .btn-container .next-btn img,
+.form-container .form1 .form-footer .btn-container .finish-btn img,
+.form-container .form2 .form-footer .btn-container .continue-btn img,
+.form-container .form2 .form-footer .btn-container .next-btn img,
+.form-container .form2 .form-footer .btn-container .finish-btn img,
+.form-container .form3 .form-footer .btn-container .continue-btn img,
+.form-container .form3 .form-footer .btn-container .next-btn img,
+.form-container .form3 .form-footer .btn-container .finish-btn img {
+  padding-right: 9px;
+}
+
+.form-container .form1 .morebtn-container,
+.form-container .form2 .morebtn-container,
+.form-container .form3 .morebtn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.form-container .form1 .morebtn-container .more-btn,
+.form-container .form2 .morebtn-container .more-btn,
+.form-container .form3 .morebtn-container .more-btn {
+  -ms-flex-item-align: end;
+  align-self: flex-end;
+  padding: 10px 10px 10px 10px;
+  background-color: #074ee8;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.form-container .form1 .morebtn-container .more-btn:hover,
+.form-container .form2 .morebtn-container .more-btn:hover,
+.form-container .form3 .morebtn-container .more-btn:hover {
+  background-color: #063eba;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
+.form-container .form1 .morebtn-container .more-btn .add,
+.form-container .form2 .morebtn-container .more-btn .add,
+.form-container .form3 .morebtn-container .more-btn .add {
+  padding-right: 7px;
+}
+
+.form-container .form1 .morebtn-container .more-btn .target,
+.form-container .form2 .morebtn-container .more-btn .target,
+.form-container .form3 .morebtn-container .more-btn .target {
+  padding-left: 7px;
+}
+
+.form-container .form1 .ocult,
+.form-container .form2 .ocult,
+.form-container .form3 .ocult {
+  display: none;
+}
+
+.form-container .form1 .certificates,
+.form-container .form2 .certificates,
+.form-container .form3 .certificates {
+  width: 100%;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.form-container .form1 .cert,
+.form-container .form2 .cert,
+.form-container .form3 .cert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+}
+
+.form-container .form1 .cert .delete,
+.form-container .form2 .cert .delete,
+.form-container .form3 .cert .delete {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  color: rgba(255, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form1 .cert .delete:hover,
+.form-container .form2 .cert .delete:hover,
+.form-container .form3 .cert .delete:hover {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.form-container .form1 .cert .edit,
+.form-container .form2 .cert .edit,
+.form-container .form3 .cert .edit {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form1 .cert .edit2,
+.form-container .form2 .cert .edit2,
+.form-container .form3 .cert .edit2 {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  background-color: rgba(0, 102, 255, 0.384);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#heart {
+  font-size: 20px;
+  padding: 10px 10px 0 0;
+}
+
+#heart-selected {
+  padding: 10px 10px 0 0;
+  font-size: 20px;
+  color: red;
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
+}
+
+#row {
+  -webkit-box-ordinal-group: 0;
+  -ms-flex-order: -1;
+  order: -1;
 }
 
 @media screen and (max-width: 768px) {
@@ -421,7 +649,9 @@ body {
   .top-content .navigation .nav-buttons {
     width: 80%;
   }
-  .form-container .form {
+  .form-container .form1,
+  .form-container .form2,
+  .form-container .form3 {
     width: 80%;
   }
 }
@@ -436,22 +666,34 @@ body {
   .top-content .navigation {
     margin-bottom: 5%;
   }
-  .form-container .form .form-group {
+  .form-container .form1 .form-group,
+  .form-container .form2 .form-group,
+  .form-container .form3 .form-group {
     margin-bottom: 7%;
   }
-  .form-container .form .birthdate-age {
+  .form-container .form1 .birthdate-age,
+  .form-container .form2 .birthdate-age,
+  .form-container .form3 .birthdate-age {
     margin-bottom: 5%;
   }
-  .form-container .form .birthdate-age .birthdate-title {
+  .form-container .form1 .birthdate-age .birthdate-title,
+  .form-container .form2 .birthdate-age .birthdate-title,
+  .form-container .form3 .birthdate-age .birthdate-title {
     margin-bottom: 1%;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group {
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group,
+  .form-container .form2 .birthdate-age .birthdate-data .birth-group,
+  .form-container .form3 .birthdate-age .birthdate-data .birth-group {
     width: 23%;
   }
-  .form-container .form .form-footer .check-group {
+  .form-container .form1 .form-footer .check-group,
+  .form-container .form2 .form-footer .check-group,
+  .form-container .form3 .form-footer .check-group {
     margin-bottom: 3%;
   }
-  .form-container .form .form-footer .check-group #terms-check {
+  .form-container .form1 .form-footer .check-group #terms-check,
+  .form-container .form2 .form-footer .check-group #terms-check,
+  .form-container .form3 .form-footer .check-group #terms-check {
     margin-right: 3%;
   }
 }
@@ -461,7 +703,249 @@ body {
     font-size: 0.6rem;
   }
   .top-content .main-title h1 {
+    padding: 8% 0 8% 0;
+  }
+  .form-container .form1 .form-group input,
+  .form-container .form2 .form-group input,
+  .form-container .form3 .form-group input {
+    padding: 8px;
+  }
+  .form-container .form1 .row .form-email,
+  .form-container .form2 .row .form-email,
+  .form-container .form3 .row .form-email {
+    width: 60%;
+  }
+  .form-container .form1 .row .form-email input,
+  .form-container .form2 .row .form-email input,
+  .form-container .form3 .row .form-email input {
+    padding-right: 0;
+  }
+  .form-container .form1 .row .form-phone,
+  .form-container .form2 .row .form-phone,
+  .form-container .form3 .row .form-phone {
+    width: 35%;
+  }
+  .form-container .form1 .row .form-phone input,
+  .form-container .form2 .row .form-phone input,
+  .form-container .form3 .row .form-phone input {
+    padding-right: 0;
+  }
+  .form-container .form1 .birthdate-age .birthdate-data,
+  .form-container .form2 .birthdate-age .birthdate-data,
+  .form-container .form3 .birthdate-age .birthdate-data {
+    margin: 0;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group,
+  .form-container .form2 .birthdate-age .birthdate-data .birth-group,
+  .form-container .form3 .birthdate-age .birthdate-data .birth-group {
+    width: 35%;
+  }
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group select,
+  .form-container .form2 .birthdate-age .birthdate-data .birth-group select,
+  .form-container .form3 .birthdate-age .birthdate-data .birth-group select {
+    padding: 8px;
+    margin-bottom: 5%;
+  }
+  .form-container .form1 .form-footer .check-group #terms-check,
+  .form-container .form2 .form-footer .check-group #terms-check,
+  .form-container .form3 .form-footer .check-group #terms-check {
+    -webkit-transform: scale(1.4);
+    transform: scale(1.4);
+  }
+  .btn-container button,
+  .morebtn-container button {
+    width: 100%;
+  }
+  .btn-container #add,
+  .morebtn-container #add {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .top-content-list-page .navigation .nav-buttons-list-page .nav-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: white;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #063eba;
+    cursor: pointer;
+    font-size: 0.8rem;
+  }
+  .top-content .main-title h1 {
     padding: 10% 0 8% 0;
   }
+  .form-container .form1 .form-footer .check-group,
+  .form-container .form2 .form-footer .check-group,
+  .form-container .form3 .form-footer .check-group {
+    margin-bottom: 5%;
+  }
+  .form-container .form1 .form-footer .check-group #terms-check,
+  .form-container .form2 .form-footer .check-group #terms-check,
+  .form-container .form3 .form-footer .check-group #terms-check {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+}
+body .profiles-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+body .profiles-container .cards-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  text-align: center;
+  flex-direction: column;
+}
+body .profiles-container .cards-container .card {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #063eba;
+  border-radius: 6px;
+  padding-top: 1%;
+  padding-bottom: 1%;
+  margin-left: 2.3%;
+  margin-right: 2.3%;
+  margin-bottom: 2%;
+}
+body .profiles-container .cards-container .card #card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  margin-bottom: 1.5%;
+  border-radius: 6px;
+  background-color: rgb(250, 250, 250);
+}
+body .profiles-container .cards-container .card #card label {
+  font-size: 0.81rem;
+  margin-bottom: 0.3rem;
+  color: #063eba;
+}
+body .profiles-container .cards-container .card #card p {
+  font-size: 0.9rem;
+}
+body .profiles-container .cards-container .card #card li {
+  font-size: 0.9rem;
+}
+body .home-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10%;
+  padding-top: 2%;
+}
+body .home-button button {
+  align-self: center;
+  padding: 10px 30px 10px 10px;
+  background-color: #074ee8;
+  background-image: url(../../images/white-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+body .page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+body .top-content-list-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+body .top-content-list-page .navigation {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  width: 100%;
+  margin-bottom: 3%;
+}
+body .top-content-list-page .navigation .nav-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  width: 60%;
+}
+body .top-content-list-page .navigation .nav-buttons .nav-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #063eba;
+  cursor: pointer;
+}
+body .top-content-list-page .navigation .nav-buttons-list-page .nav-btn {
+  width: 100%;
+  padding: 15px;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #063eba;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+body .top-content-list-page .navigation .nav-buttons .nav-btn:hover {
+  background-color: #ececff;
+  transition: 360ms ease-in-out;
+}
+body .top-content-list-page .navigation .nav-buttons .selected-btn {
+  border-bottom: 2px solid #074ee8;
+  color: #074ee8;
+  transition: 360ms ease-in-out;
+}
+body .top-content-list-page .navigation .complete-forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: row;
+  width: 60%;
+  height: 50px;
+  background-color: #063eba;
+  border-top-left-radius: 10px;
+}
+body .top-content-list-page .navigation .complete-forms h3 {
+  color: white;
+}
+body .top-content-list-page .main-title {
+  width: 60%;
+}
+body .top-content-list-page .main-title h1 {
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: left;
+  padding: 3% 0 3% 0;
 }
 /*# sourceMappingURL=style.css.map */

@@ -38,6 +38,7 @@
             .selected-btn {
                 border-bottom: 2px solid $primaryColor;
                 color: $primaryColor;
+                transition: 360ms ease-in-out;
             }
         }
     }
@@ -45,7 +46,7 @@
 
 .form-container {
     @include centered();
-    .form {
+    .form1, .form2, .form3 {
         @include centered();
         width: 60%;
         .form-group {
@@ -73,16 +74,14 @@
         }
         .row {
             flex-direction: row;
+            justify-content: space-between;
             margin-bottom: 5%;
             .form-email {
                 display: flex;
                 flex-direction: column;
-                width: 70%;
-                label {
-                    align-self: flex-start;
-                }
+                width: 65%;
                 input {
-                    width: 85%;
+                    width: 100%;
                 }
             }
 
@@ -90,10 +89,6 @@
                 display: flex;
                 flex-direction: column;
                 width: 30%;
-                label {
-                    align-self: flex-start;
-                    margin-bottom: 0.5%;
-                }
                 input {
                     align-self: flex-start;
                     width: 100%;
@@ -168,7 +163,7 @@
             .btn-container {
                 @include centered();
                 width: 100%;
-                .continue-btn {
+                .continue-btn, .next-btn, .finish-btn{
                     align-self: flex-end;
                     padding: 10px 30px 10px 10px;
                     background-color: $primaryColor;
@@ -184,10 +179,100 @@
                         background-color: $primaryColor*0.8;
                         transition: 240ms ease-in-out;                        
                     }
+                    img{
+                        padding-right: 9px;
+                    }  
+                }
+            }
+        }        
+        .morebtn-container {
+            @include centered();
+            width: 100%;
+            .more-btn {
+                align-self: flex-end;
+                padding: 10px 10px 10px 10px;
+                background-color: $primaryColor;
+                color: white;
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                &:hover {
+                    background-color: $primaryColor*0.8;
+                    transition: 240ms ease-in-out;                        
+                }
+                .add{
+                    padding-right: 7px;
+                }
+                .target{
+                    padding-left: 7px;
                 }
             }
         }
+        .ocult{
+            display: none;
+        }
+        .certificates{
+            width: 100%;
+            padding-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .cert{
+            display: flex;
+            flex-direction: row;
+            align-items: stretch;
+            .delete{
+                font-size: 15px;
+                padding: 10px 15px 10px 15px;
+                color: rgba(255, 0, 0, 0.5);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: white;
+                &:hover{
+                    color:  white;
+                    background-color:rgba(255, 0, 0, 0.5);
+                }
+            }
+            .edit{
+                font-size: 15px;
+                padding: 10px 15px 10px 15px;
+                color: rgba(0, 0, 0, 0.5);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+                background-color: white;
+            }
+            .edit2{
+                font-size: 15px;
+                padding: 10px 15px 10px 15px;
+                background-color: rgba(0, 102, 255, 0.384);
+                outline: none;
+                border: none;
+                cursor: pointer;
+                border-radius: 5px;
+            }
+        }
     }
+}
+
+#heart{
+    font-size: 20px;
+    padding: 10px 10px 0 0;
+}
+#heart-selected{
+    padding: 10px 10px 0 0;
+    font-size: 20px;
+    color:red;
+    order: -1;
+}
+#row{
+    order: -1;
 }
 
 @media screen and (max-width: 768px){
@@ -209,7 +294,7 @@
     }
 
     .form-container {
-        .form {
+        .form1, .form2, .form3 {
             width: 80%;
         }
     }
@@ -231,7 +316,7 @@
     }
 
     .form-container {
-        .form {
+        .form1, .form2, .form3 {
             .form-group {
                 margin-bottom: 7%;            
             }       
@@ -266,7 +351,84 @@
     .top-content {
         .main-title {
             h1 {
+                padding: 8% 0 8% 0;
+            }
+        }
+    }
+    .form-container {
+        .form1, .form2, .form3 {
+            .form-group {
+                input {
+                    padding: 8px;
+                }
+            }
+
+            .row {
+                .form-email {
+                    width: 60%;
+                    input {
+                        padding-right: 0;
+                    }
+                }
+                .form-phone {
+                    width: 35%;
+                    input {
+                        padding-right: 0;
+                    }
+                }
+            }
+
+            .birthdate-age {
+                .birthdate-data {
+                    margin: 0;
+                    flex-wrap: wrap;
+                    .birth-group {
+                        width: 35%;
+                        select {
+                            padding: 8px;
+                            margin-bottom: 5%;
+                        }
+                    }
+                }
+            }
+
+            .form-footer {
+                .check-group {
+                    #terms-check {
+                        transform: scale(1.4);
+                    }        
+                }
+            }
+        }
+    }
+    .btn-container, .morebtn-container{
+        button{
+            width: 100%;
+        }
+        #add{
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .top-content {
+        .main-title {
+            h1 {
                 padding: 10% 0 8% 0;
+            }
+        }
+    }
+
+    .form-container {
+        .form1, .form2, .form3 {
+            .form-footer {
+                .check-group {
+                    margin-bottom: 5%;
+                    #terms-check {
+                        transform: scale(1.2);
+                    }
+                }
             }
         }
     }

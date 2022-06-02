@@ -1,38 +1,10 @@
-function changeLinkdinLink() {
-  document.getElementById("linkdin-link").value =
-    localStorage.getItem("linkIn");
-}
-
-function changeGithubLink() {
-  document.getElementById("github-link").value = localStorage.getItem("github");
-}
-
 // function if the github link is null then it will put a red border around github link input
 document
-  .getElementsByClassName("continue-btn")[0]
+  .getElementsByClassName("next-btn")[0]
   .addEventListener("click", (event) => {
     if (document.getElementById("github-link").value == "") {
       document.getElementById("github-link").style.border = "1px solid red";
     }
-  });
-
-// putting the local storage values in the input fields
-changeLinkdinLink();
-changeGithubLink();
-
-// event listener to save the value inside input fields to local storage variables
-document
-  .getElementsByClassName("continue-btn")[0]
-  .addEventListener("click", function (event) {
-    event.preventDefault();
-
-    var linkdinLink = document.getElementById("linkdin-link").value;
-
-    var githubLink = document.getElementById("github-link").value;
-
-    localStorage.setItem("linkIn", linkdinLink);
-
-    localStorage.setItem("github", githubLink);
   });
 
 // validating the linkdin and github links
