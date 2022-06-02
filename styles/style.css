@@ -950,4 +950,9 @@ body .top-content-list-page .main-title h1 {
   text-align: left;
   padding: 3% 0 3% 0;
 }
+body label {
+  font-size: 0.81rem;
+  margin-bottom: 0.3rem;
+  color: #063eba;
+}
 /*# sourceMappingURL=style.css.map */
