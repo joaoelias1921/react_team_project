@@ -119,9 +119,10 @@ function renderizarPropostas(){
             renderizarPropostas(this);
             input1.value = '';
             salvarDadosNostorage();
+            document.getElementById('certificates').style.border = null;
         }else{
             var local = document.querySelector('#error-alert');
-            local.removeAttribute("class");
+            document.getElementById('certificates').style.border = "1px solid red";
         }
 
         
