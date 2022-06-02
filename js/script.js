@@ -163,3 +163,46 @@ function recolocaInput(){
     btnMore.setAttribute("class","more-btn");
 }
 
+//MODAL
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+//Pega os campos do Form
+
+// When the user clicks the button, open the modal 
+var btn5 = document.getElementById("finish");
+//var formulario = document.
+//btn5.onclick = function() {
+//       modal.style.display = "block";
+//}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+  //Aqui coloca a função para ir para a ultima tela
+  document.location.reload(true);
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function sub(event){
+    event.preventDefault();
+    modal.style.display = "block";
+    setTimeout(function(){ 
+        //Aqui coloca a função para ir para a ultima tela
+        document.location.reload(true);
+    }, 10000);
+}
+
