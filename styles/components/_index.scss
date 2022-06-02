@@ -116,6 +116,29 @@
     font-size: 14px;
 }
 
+#inpHeart{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid rgb(182, 180, 180);
+    border-radius: 0 5px 5px 0;
+    border-left:0px;
+    padding: 8px;
+}
+
+#input{
+    display: flex;
+    width: 100%;
+    &:hover {
+        background-color: rgb(240, 240, 240);
+        transition: 240ms ease-in-out;
+    }
+}
+
+#input{
+    align-items: center;
+}
+
 .form-container {
     @include centered();
     .form {
@@ -312,6 +335,7 @@
             width: 80%;
         }
     }
+
 }
 
 @media screen and (max-width: 425px){
@@ -355,6 +379,9 @@
                 }
             }
         }
+    }
+    #inpHeart{
+        padding: 6.6px;
     }
 }
 
@@ -437,6 +464,8 @@
       }
     
 
-
+    #inpHeart{
+        padding: 6px;
+    }
 
 }

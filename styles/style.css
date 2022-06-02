@@ -180,6 +180,35 @@ html, body {
   font-size: 14px;
 }
 
+#inpHeart {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  border: 2px solid #b6b4b4;
+  border-radius: 0 5px 5px 0;
+  border-left: 0px;
+  padding: 8px;
+}
+
+#input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+#input:hover {
+  background-color: #f0f0f0;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
+#input {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .form-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -548,6 +577,9 @@ html, body {
   .form-container .form .form-footer .check-group #terms-check {
     margin-right: 3%;
   }
+  #inpHeart {
+    padding: 6.6px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -645,6 +677,9 @@ html, body {
     color: #074EE8;
     text-decoration: none;
     cursor: pointer;
+  }
+  #inpHeart {
+    padding: 6px;
   }
 }
 /*# sourceMappingURL=style.css.map */

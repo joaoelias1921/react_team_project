@@ -7,7 +7,38 @@ var input1 = document.querySelector('#certificates');
 let dados = JSON.parse(localStorage.getItem('dados')) || [];
 renderizarPropostas();
 
+var FAVORITO;
+
+
+
+
+
+var btnHeart = document.getElementById('inpHeart');
+
+btnHeart.onclick = function(event){
+    event.preventDefault();
+    
+    if(btnHeart.name == "none"){
+        FAVORITO = true;
+        btnHeart.name = "yes";
+        btnHeart.setAttribute("class","fas fa-heart");
+    }else{
+        FAVORITO = false;
+        btnHeart.name = "none";
+        btnHeart.setAttribute("class","far fa-heart");
+    }
+}
+
+function resetaCoracao(){
+    let btnHeart = document.getElementById('inpHeart');
+    FAVORITO = false;
+    btnHeart.name = "none";
+        btnHeart.setAttribute("class","far fa-heart");
+}
+
+
 function renderizarPropostas(){
+    resetaCoracao();
     var local = document.querySelector('#error-alert');
         local.setAttribute("class","ocult");
     limpaTela();
@@ -104,6 +135,20 @@ function renderizarPropostas(){
     if(dados.length == 5){
         removeInput();
     }
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+
 }
 
     btnMore.onclick = function(event){
@@ -115,7 +160,12 @@ function renderizarPropostas(){
 
         if(teste == true){
             let proposta1 = input1.value;
-            dados.push({propostas: proposta1, indice: dados.length, fav: false});
+            let favorited = document.getElementById('inpHeart');
+                if(FAVORITO == true){
+                    dados.push({propostas: proposta1, indice: dados.length, fav: true});
+                }else{
+                    dados.push({propostas: proposta1, indice: dados.length, fav: false});
+                }
             renderizarPropostas(this);
             input1.value = '';
             salvarDadosNostorage();
@@ -124,7 +174,6 @@ function renderizarPropostas(){
             var local = document.querySelector('#error-alert');
             document.getElementById('certificates').style.border = "1px solid red";
         }
-
         
     }
 
