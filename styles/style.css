@@ -100,6 +100,12 @@ html, body {
   color: #074EE8;
 }
 
+#error-alert {
+  color: red;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .form-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -408,8 +414,18 @@ html, body {
 }
 
 #heart-selected {
+  padding: 10px 10px 0 0;
   font-size: 20px;
   color: red;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+#row {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
 }
 
 @media screen and (max-width: 768px) {

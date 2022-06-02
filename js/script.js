@@ -8,6 +8,8 @@ let dados = JSON.parse(localStorage.getItem('dados')) || [];
 renderizarPropostas();
 
 function renderizarPropostas(){
+    var local = document.querySelector('#error-alert');
+        local.setAttribute("class","ocult");
     limpaTela();
     for(let i = 0; i < dados.length; i++){
         const father = document.querySelector('.certificates');
@@ -22,15 +24,26 @@ function renderizarPropostas(){
             var icone3 = document.createElement('a');
             icone1.setAttribute("class","fas fa-trash");
             icone2.setAttribute("class","fas fa-pencil-alt");
-            icone3.setAttribute("class","far fa-heart");
-            btn3.setAttribute("id","heart");
+            
+
+                if(dados[i].fav != true){
+                    btn3.setAttribute("id","heart");
+                    icone3.setAttribute("class","far fa-heart");
+                }else{
+                    div.setAttribute('id','row');
+                    btn3.setAttribute("id","heart-selected");
+                    var coracao = btn3.children[0];
+                    console.log(coracao);
+                    icone3.setAttribute("class","fas fa-heart");
+                }
+            
+            
             btn1.appendChild(icone1);
             btn2.appendChild(icone2);
             btn3.appendChild(icone3);
         
 
             div.setAttribute('class','form-group cert');
-            div.setAttribute('id','row');
             btn1.setAttribute('class','delete');
             btn2.setAttribute('class','edit');
             campo.setAttribute('placeholder',`${dados[i].propostas}`);
@@ -45,13 +58,19 @@ function renderizarPropostas(){
 
 
                 btn3.onclick = function(){
-                    if(btn3.id != "heart"){
-                        btn3.setAttribute('id','heart');
+                    if(btn3.id == "heart"){
+
+                        dados[i].fav = true;
+                        console.log(dados);
+                        salvarDadosNostorage();
+                        renderizarPropostas();
                     }else{
-                        btn3.setAttribute('id','heart-selected');
-                        var elemento = document.querySelector('#row');
-                        elemento.setAttribute('id',"heart-selected");
+                        dados[i].fav = false;
+                        console.log(dados);
+                        salvarDadosNostorage();
+                        renderizarPropostas();
                     }
+
                 };
 
 
@@ -89,11 +108,23 @@ function renderizarPropostas(){
 
     btnMore.onclick = function(event){
         event.preventDefault();
-        let proposta1 = input1.value;
-            dados.push({propostas: proposta1, indice: dados.length});
+
+        var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
+        var teste = expression.test(input1.value);
+        console.log(teste);
+
+        if(teste == true){
+            let proposta1 = input1.value;
+            dados.push({propostas: proposta1, indice: dados.length, fav: false});
             renderizarPropostas(this);
             input1.value = '';
             salvarDadosNostorage();
+        }else{
+            var local = document.querySelector('#error-alert');
+            local.removeAttribute("class");
+        }
+
+        
     }
 
     function concluirProposta(indice){
@@ -113,9 +144,6 @@ function salvarDadosNostorage(){
     localStorage.setItem('dados',JSON.stringify(dados));
 }
 
-function deleteCertificate(){
-        alert('element');
-};
 
 function limpaTela(){
     const father = document.querySelector('.certificates');
