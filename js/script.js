@@ -267,9 +267,9 @@ window.onclick = function(event) {
 function sub(event){
     event.preventDefault();
     modal.style.display = "block";
-    setTimeout(function(){ 
-        //Aqui coloca a função para ir para a ultima tela
-        document.location.reload(true);
-    }, 10000);
+   // setTimeout(function(){ 
+   //     //Aqui coloca a função para ir para a ultima tela
+   //     document.location.reload(true);
+   // }, 10000);
 }
 

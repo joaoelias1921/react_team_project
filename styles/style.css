@@ -54,16 +54,13 @@ html, body {
 }
 
 .modal-content .btn-modal {
-  width: 50%;
   text-align: center;
   padding-top: 4rem;
 }
 
 .modal-content .txt-modal {
-  padding-top: 2rem;
-  width: 50%;
+  font-size: 25px;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 /* The Close Button */
@@ -654,12 +651,12 @@ html, body {
     border-radius: 20px;
   }
   .modal-content .btn-modal {
-    width: 50%;
     text-align: center;
     padding-top: 4rem;
   }
   .modal-content .txt-modal {
     text-align: center;
+    font-size: 15px;
     margin-bottom: -30px;
   }
   /* The Close Button */

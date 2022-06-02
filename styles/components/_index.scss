@@ -27,15 +27,12 @@
     width: 50%;
     border-radius: 20px;
     .btn-modal{
-        width: 50%;
         text-align: center;
         padding-top: 4rem;
     }
     .txt-modal{
-        padding-top: 2rem;
-        width: 50%;
+        font-size: 25px;
         text-align: center;
-        margin-bottom: 20px;
     }
   }
   
@@ -431,12 +428,12 @@
         width: 50%;
         border-radius: 20px;
         .btn-modal{
-            width: 50%;
             text-align: center;
             padding-top: 4rem;
         }
         .txt-modal{
             text-align: center;
+            font-size: 15px;
             margin-bottom: -30px;
         }
       }
