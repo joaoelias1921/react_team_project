@@ -915,6 +915,7 @@ body .top-content-list-page .navigation .nav-buttons-list-page .nav-btn {
   border-bottom: 2px solid #063eba;
   cursor: pointer;
   font-size: 0.8rem;
+  color: #063eba;
 }
 body .top-content-list-page .navigation .nav-buttons .nav-btn:hover {
   background-color: #ececff;
