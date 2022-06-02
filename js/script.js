@@ -22,7 +22,9 @@ btnHeart.onclick = function(event){
         FAVORITO = true;
         btnHeart.name = "yes";
         btnHeart.setAttribute("class","fas fa-heart");
+        btnHeart.style.color = "#074EE8";
     }else{
+        btnHeart.style.color = "black";
         FAVORITO = false;
         btnHeart.name = "none";
         btnHeart.setAttribute("class","far fa-heart");
@@ -31,16 +33,29 @@ btnHeart.onclick = function(event){
 
 function resetaCoracao(){
     let btnHeart = document.getElementById('inpHeart');
+    btnHeart.style.color = "black";
     FAVORITO = false;
     btnHeart.name = "none";
         btnHeart.setAttribute("class","far fa-heart");
 }
 
+function mostraErro(){
+    document.getElementById('certificates').style.border = "1px solid red";
+    document.getElementById('inpHeart').style.border = "1px solid red";
+    document.getElementById('certificates').style.borderRight = "0px";
+    document.getElementById('inpHeart').style.borderLeft = "0px";
+}
+
+function removeErro(){
+    document.getElementById('certificates').style.border = "2px solid rgb(182, 180, 180)";
+    document.getElementById('inpHeart').style.border = "2px solid rgb(182, 180, 180)";
+    document.getElementById('certificates').style.borderRight = "0px";
+    document.getElementById('inpHeart').style.borderLeft = "0px";
+        
+}
 
 function renderizarPropostas(){
     resetaCoracao();
-    var local = document.querySelector('#error-alert');
-        local.setAttribute("class","ocult");
     limpaTela();
     for(let i = 0; i < dados.length; i++){
         const father = document.querySelector('.certificates');
@@ -170,9 +185,9 @@ function renderizarPropostas(){
             input1.value = '';
             salvarDadosNostorage();
             document.getElementById('certificates').style.border = null;
+            removeErro();
         }else{
-            var local = document.querySelector('#error-alert');
-            document.getElementById('certificates').style.border = "1px solid red";
+            mostraErro();
         }
         
     }
@@ -203,13 +218,16 @@ function limpaTela(){
 function removeInput(){
     let btnMore = document.querySelector('.more-btn');
     let inputCert = document.querySelector('#certificates');
+    let coracao = document.querySelector('input');
     btnMore.setAttribute("class","ocult");
     inputCert.setAttribute("class","ocult");
+    document.getElementById("input").style.display = "none";
 }
 function recolocaInput(){
     let inputCert = document.querySelector('#certificates');
     inputCert.removeAttribute("class");
     btnMore.setAttribute("class","more-btn");
+    document.getElementById("input").style.display = "flex";
 }
 
 //MODAL

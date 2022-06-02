@@ -1,10 +1,5 @@
 @import '../abstract/variables';
 
-
-
-
-
-
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
@@ -134,6 +129,7 @@
         transition: 240ms ease-in-out;
     }
 }
+
 
 #input{
     align-items: center;
@@ -305,7 +301,7 @@
 #heart-selected{
     padding: 10px 10px 0 0;
     font-size: 20px;
-    color:red;
+    color: $primaryColor;
     order: -1;
 }
 #row{
