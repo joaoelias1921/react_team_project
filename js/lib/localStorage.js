@@ -5,6 +5,9 @@ let phone = $("#phone");
 let age = $("#age");
 let linkdin = $("#linkdin-link");
 let github = $("#github-link");
+let teamName = $("#teamName");
+let institution = $("#institution");
+let graduation = $("#graduation");
 
 $(".form1").addEventListener("submit", (event) => {
     event.preventDefault();
@@ -31,4 +34,7 @@ const loadLocalStorage = () => {
     age.value = localStorage.getItem("age");
     linkdin.value = localStorage.getItem("linkdin-link");
     github.value = localStorage.getItem("github-link");
+    teamName.value = localStorage.getItem("teamName");
+    institution.value = localStorage.getItem("institution");
+    graduation.value = localStorage.getItem("graduation");
 }
