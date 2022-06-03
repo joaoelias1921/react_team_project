@@ -160,6 +160,28 @@
                 </form>
         </section>
 
+        <div class="list-page" style="display: none;">
+            <div class="top-content-list-page">
+                <section class="main-title">
+                    <h1>Registered Profiles</h1>
+                </section>
+                <section class="navigation">
+                    <div class="nav-buttons-list-page">
+                        <button onclick="navigateToSocial()" class="nav-btn">Profiles</button>
+                    </div>
+                </section>
+            </div>
+            <div class="profiles-container">
+              <div class="cards-container">
+                <!-- card -->
+                
+              </div>
+            </div>
+            <div class="home-button">
+                <button id="modal-finish" class="continue-btn" type="button">Home</button>
+            </div>            
+        </div>
+
         <div id="myModal" class="modal">
             <!-- Modal content -->
             <div class="modal-content">
@@ -167,7 +189,7 @@
                     <p>Information submitted successfully!</p>
                 </div>
                 <div class="btn-modal">
-                    <span class="close">Close</span>
+                    <span id="modal-finish" class="close">Close</span>
                 </div>
             </div>
         </div>
@@ -176,6 +198,7 @@
     <script src="./js/lib/dobPopulation.js"></script>
     <script src="./js/lib/formValidation.js"></script>
     <script src="./js/lib/navigation.js"></script>
+    <script src="./js/lib/list.js"></script>
     <script src="./js/lib/index.js"></script>
     <script src="./js/lib/localStorage.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

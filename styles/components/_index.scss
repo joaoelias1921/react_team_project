@@ -106,6 +106,7 @@
     border-radius: 0 5px 5px 0;
     border-left:0px;
     padding: 8px;
+    cursor: pointer;
 }
 
 #input{
@@ -232,7 +233,7 @@
                     &:checked{
                         box-shadow: 0 3px 5px 0 rgb(182, 182, 182);
                     }
-                }        
+                }
             }
             .btn-container {
                 @include centered();
@@ -335,6 +336,95 @@
     }
 }
 
+.list-page {
+    @include centered();
+    width: 100%;
+    .top-content-list-page {
+        @include centered();
+        width: 60%;
+        .main-title {
+            width: 100%;
+            h1 {
+                text-align: left;
+                margin: 5% auto;
+                font-weight: bold;
+                font-size: 1.2rem;
+            }
+        }
+        .navigation {
+            @include centered();
+            width: 100%;
+            .nav-buttons-list-page {
+                @include centered();
+                width: 100%;
+                button {
+                    width: 100%;
+                    padding: 15px;
+                    background-color: white;
+                    outline: none;
+                    border: none;
+                    border-bottom: 2px solid $primaryColor;
+                    margin-bottom: 5%;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: rgb(236, 236, 255);
+                        transition: 360ms ease-in-out;
+                    }
+                }
+            }
+        }
+    }
+    .profiles-container {                
+        @include centered();
+        width: 60%;
+        .cards-container {
+            @include centered();
+            width: 100%;
+            border: 2px solid $primaryColor;
+            border-radius: 20px;
+            h3 {
+                text-align: center;
+                border-top: 8px solid $primaryColor;
+                font-size: 1.2rem;
+                padding-top: 20px;
+                margin: 5% auto;
+            }
+            div {
+                @include centered();
+                width: 90%;
+                li {
+                    width: 100%;
+                    text-align: left;
+                    list-style: none;
+                    margin-bottom: 2%;
+                }
+            }
+        }
+    }
+    .home-button {
+        margin: 5% auto;
+        width: 60%;
+        #modal-finish {
+            align-self: flex-end;
+            padding: 10px 30px 10px 10px;
+            background-color: $primaryColor;
+            background-image: url(../../images/white-arrow.png);
+            background-repeat: no-repeat;
+            background-position: center right 10px;
+            width: 100%;
+            color: white;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            &:hover {
+                background-color: $primaryColor*0.8;
+                transition: 240ms ease-in-out;                        
+            }
+        }
+    }
+}
+
 #heart{
     font-size: 20px;
     padding: 10px 10px 0 0;
@@ -343,7 +433,7 @@
 #heart-selected{
     padding: 10px 10px 0 0;
     font-size: 20px;
-    color:red;
+    color: $primaryColor;
     order: -1;
 }
 
@@ -379,6 +469,10 @@
 @media screen and (max-width: 425px){
     * {
         font-size: 0.7rem;
+    }
+    
+    #inpHeart{
+        padding: 6.4px;
     }
     .top-content {
         .main-title {
@@ -430,6 +524,9 @@
                 padding: 8% 0 8% 0;
             }
         }
+    }
+    #inpHeart{
+        padding: 4px;
     }
     .form-container {
         .form1, .form2, .form3 {
@@ -502,10 +599,6 @@
       /* The Close Button */
     .close {
         margin-left: -5px;
-    }
-
-    #inpHeart{
-        padding: 6px;
     }
 }
 

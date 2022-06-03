@@ -4,7 +4,7 @@ var divCertificates = $('.certificates');
 
 var input1 = $('#certificates');
 
-let dados = JSON.parse(localStorage.getItem('dados')) || [];
+var dados = JSON.parse(localStorage.getItem('dados')) || [];
 renderizarPropostas();
 
 var FAVORITO;
@@ -214,24 +214,26 @@ var span = document.getElementsByClassName("close")[0];
 var btn5 = document.getElementById("finish");
 btn5.onclick = function() {
     modal.style.display = "block";
-    let allInputs = document.querySelectorAll("input");
-    for(input of allInputs) {
-        input.value = "";
-    }
-    localStorage.clear();
 }
 
-// When the user clicks on <span> (x), close the modal
 span.onclick = function() {
-  modal.style.display = "none";
-  //Aqui coloca a função para ir para a ultima tela
-  document.location.reload(true);
+    modal.style.display = "none";
+    //Aqui coloca a função para ir para a ultima tela
+    $(".top-content").style.display = "none";
+    $(".form-container").style.display = "none";
+    $(".list-page").style.display = "flex";
+    getData();
+    getVariables();
+    let allCards = document.querySelector(".cards-container").innerHTML;
+    localStorage.setItem("allCards", allCards);
+    pai.innerHTML = localStorage.getItem("allCards");
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    window.location.href = "list.html";
   }
 }
 
@@ -240,6 +242,6 @@ function sub(event){
     modal.style.display = "block";
     setTimeout(function(){ 
         //Aqui coloca a função para ir para a ultima tela
-        document.location.reload(true);
+        window.location.href = "list.html";
     }, 10000);
 }
