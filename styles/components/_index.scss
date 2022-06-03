@@ -343,7 +343,7 @@
 #heart-selected{
     padding: 10px 10px 0 0;
     font-size: 20px;
-    color:red;
+    color: $primaryColor;
     order: -1;
 }
 
@@ -379,6 +379,9 @@
 @media screen and (max-width: 425px){
     * {
         font-size: 0.7rem;
+    }
+    #inpHeart{
+        padding: 6.4px;
     }
     .top-content {
         .main-title {
@@ -430,6 +433,9 @@
                 padding: 8% 0 8% 0;
             }
         }
+    }
+    #inpHeart{
+        padding: 4px;
     }
     .form-container {
         .form1, .form2, .form3 {
@@ -502,10 +508,6 @@
       /* The Close Button */
     .close {
         margin-left: -5px;
-    }
-
-    #inpHeart{
-        padding: 6px;
     }
 }
 

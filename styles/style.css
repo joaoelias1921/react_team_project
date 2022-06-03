@@ -634,7 +634,7 @@ html, body {
 #heart-selected {
   padding: 10px 10px 0 0;
   font-size: 20px;
-  color: red;
+  color: #074EE8;
   -webkit-box-ordinal-group: 0;
       -ms-flex-order: -1;
           order: -1;
@@ -668,6 +668,9 @@ html, body {
   * {
     font-size: 0.7rem;
   }
+  #inpHeart {
+    padding: 6.4px;
+  }
   .top-content .main-title h1 {
     padding: 10% 0 3% 0;
   }
@@ -700,6 +703,9 @@ html, body {
   }
   .top-content .main-title h1 {
     padding: 8% 0 8% 0;
+  }
+  #inpHeart {
+    padding: 4px;
   }
   .form-container .form1 .form-group input, .form-container .form2 .form-group input, .form-container .form3 .form-group input {
     padding: 8px;
@@ -766,9 +772,6 @@ html, body {
   /* The Close Button */
   .close {
     margin-left: -5px;
-  }
-  #inpHeart {
-    padding: 6px;
   }
 }
 
