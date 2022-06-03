@@ -1,4 +1,12 @@
-var tempNumber = 2;
+var tempNumber = localStorage.getItem("tempNumberLocal");
+localStorage.setItem("tempNumberLocal", tempNumber);
+alert(tempNumberLocal);
+
+// create a function that increase tempNumber every time the function is called
+function increaseTempNumber() {
+  tempNumber++;
+  localStorage.setItem("tempNumberLocal", tempNumber);
+}
 
 function changeValue() {
   // definindo variaveis para puxar valor do local storage
@@ -55,6 +63,8 @@ function changeValue() {
 
 // esta é a função que cria um card com todos os valores do localStorage e acrescenta-o ao container
 function createCard() {
+  var fullname = localStorage.getItem("fullname");
+
   var card = document.createElement("div");
   card.className = "card";
   document.getElementsByClassName("cards-container")[0].appendChild(card);
@@ -69,7 +79,7 @@ function createCard() {
   cardName.appendChild(labelValue);
   var localNameValue = document.createElement("p");
   localNameValue.className = "name-value-name";
-  localNameValue.innerHTML = "dan";
+  localNameValue.innerHTML = "name-teste";
   cardName.appendChild(localNameValue);
 
   // creating the nickname section
@@ -82,7 +92,7 @@ function createCard() {
   cardNickname.appendChild(labelValue);
   var localNicknameValue = document.createElement("p");
   localNicknameValue.className = "nickname-value-nickname";
-  localNicknameValue.innerHTML = "danizika";
+  localNicknameValue.innerHTML = "nick-teste";
   cardNickname.appendChild(localNicknameValue);
 
   // creating the email section
@@ -134,7 +144,7 @@ function createCard() {
   cardLinkedin.appendChild(labelValue);
   var localLinkedinValue = document.createElement("p");
   localLinkedinValue.className = "linkedin-value-linkedin";
-  localLinkedinValue.innerHTML = "https://www.linkedin.com/in/danizika/";
+  localLinkedinValue.innerHTML = "https://www.linkedin.com/in/teste/";
   cardLinkedin.appendChild(localLinkedinValue);
 
   // creating the github section
@@ -147,7 +157,7 @@ function createCard() {
   cardGithub.appendChild(labelValue);
   var localGithubValue = document.createElement("p");
   localGithubValue.className = "github-value-github";
-  localGithubValue.innerHTML = "github.com/danizika";
+  localGithubValue.innerHTML = "github.com/testea";
   cardGithub.appendChild(localGithubValue);
 
   // creating the team name section
@@ -160,7 +170,7 @@ function createCard() {
   cardTeamName.appendChild(labelValue);
   var localTeamNameValue = document.createElement("p");
   localTeamNameValue.className = "team-value-team";
-  localTeamNameValue.innerHTML = "Team Name";
+  localTeamNameValue.innerHTML = "Team Name Teste";
   cardTeamName.appendChild(localTeamNameValue);
 
   // creating the institution section
@@ -173,7 +183,7 @@ function createCard() {
   cardInstitution.appendChild(labelValue);
   var localInstitutionValue = document.createElement("p");
   localInstitutionValue.className = "institution-value-institution";
-  localInstitutionValue.innerHTML = "Institution Name";
+  localInstitutionValue.innerHTML = "Institution Name Teste";
   cardInstitution.appendChild(localInstitutionValue);
 
   // creating the graduation section
@@ -186,9 +196,92 @@ function createCard() {
   cardGraduation.appendChild(labelValue);
   var localGraduationValue = document.createElement("p");
   localGraduationValue.className = "graduation-value-graduation";
-  localGraduationValue.innerHTML = "Graduation Name";
+  localGraduationValue.innerHTML = "Graduation Name Teste";
   cardGraduation.appendChild(localGraduationValue);
 }
-createCard();
-// após essa função ser executada, todos valores contidos no localStorage serão inseridos no card
-changeValue();
+
+// save the new card in the localStorage
+function saveCard() {
+  var card = document.getElementsByClassName("card");
+  var cardArray = [];
+  for (var i = 0; i < card.length; i++) {
+    var cardObject = {};
+    cardObject.name =
+      card[i].getElementsByClassName("name-value-name")[0].innerHTML;
+    cardObject.nickname = card[i].getElementsByClassName(
+      "nickname-value-nickname"
+    )[0].innerHTML;
+    cardObject.email =
+      card[i].getElementsByClassName("email-value-email")[0].innerHTML;
+    cardObject.phone =
+      card[i].getElementsByClassName("phone-value-phone")[0].innerHTML;
+    cardObject.age =
+      card[i].getElementsByClassName("age-value-age")[0].innerText;
+    cardObject.linkedin = card[i].getElementsByClassName(
+      "linkedin-value-linkedin"
+    )[0].innerHTML;
+    cardObject.github = card[i].getElementsByClassName(
+      "github-value-github"
+    )[0].innerHTML;
+    cardObject.teamName =
+      card[i].getElementsByClassName("team-value-team")[0].innerHTML;
+    cardObject.institution = card[i].getElementsByClassName(
+      "institution-value-institution"
+    )[0].innerHTML;
+    cardObject.graduation = card[i].getElementsByClassName(
+      "graduation-value-graduation"
+    )[0].innerHTML;
+    cardArray.push(cardObject);
+  }
+  localStorage.setItem("card", JSON.stringify(cardArray));
+}
+
+// print the localStorage card in console
+function printCard() {
+  var card = JSON.parse(localStorage.getItem("card"));
+  console.log(card);
+}
+
+// create a event listener to the button class "finish-btn"
+var finishBtn = document.querySelector(".finish-btn");
+finishBtn.addEventListener("click", function () {
+  // remove the card
+  // var card = document.querySelector(".card");
+  // card.remove();
+  // create a new card
+  createCard();
+  // change the values
+  changeValue();
+  // save the new card in the localStorage
+  saveCard();
+});
+
+// create a function that create, change and save the card
+function createCardFinal() {
+  createCard();
+  saveCard();
+}
+function changeValueFinal() {
+  changeValue();
+}
+
+var finishBtn = document.getElementsByClassName("finish-btn");
+finishBtn.addEventListener("click", function () {
+  alert("fuc");
+});
+
+// create a function that load the cards in array into the page
+function loadCard() {
+  var card = JSON.parse(localStorage.getItem("card"));
+  for (var i = 0; i < card.length; i++) {
+    createCardFinal();
+    changeValueFinal();
+  }
+}
+
+// create a function that remove the cards inside the localStorage array
+function removeCard() {
+  localStorage.removeItem("card");
+}
+
+loadCard();
