@@ -1,5 +1,59 @@
 @import '../abstract/variables';
 
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    @include centered();
+    background-color: #fefefe;
+    margin: auto;
+    padding: 50px;
+    border: 5px solid #888;
+    width: 50%;
+    border-radius: 20px;
+
+    .btn-modal{
+        text-align: center;
+        padding-top: 4rem;
+    }
+    .txt-modal{
+        font-size: 25px;
+        text-align: center;
+        font-weight: bold;
+    }
+  }
+  
+  /* The Close Button */
+  .close {
+    padding: 10px 30px 10px 10px;
+    background-color: $primaryColor;
+    background-image: url(../../images/check.png);
+    background-repeat: no-repeat;
+    background-position: center right 10px;
+    color: white;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    &:hover {
+        background-color: $primaryColor*0.8;
+        transition: 240ms ease-in-out;                        
+    }
+  }
+
 .top-content {
     @include centered();
     width: 100%;
@@ -41,6 +95,26 @@
                 transition: 360ms ease-in-out;
             }
         }
+    }
+}
+
+#inpHeart{
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid rgb(182, 180, 180);
+    border-radius: 0 5px 5px 0;
+    border-left:0px;
+    padding: 8px;
+}
+
+#input{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    &:hover {
+        background-color: rgb(240, 240, 240);
+        transition: 240ms ease-in-out;
     }
 }
 
@@ -265,12 +339,14 @@
     font-size: 20px;
     padding: 10px 10px 0 0;
 }
+
 #heart-selected{
     padding: 10px 10px 0 0;
     font-size: 20px;
     color:red;
     order: -1;
 }
+
 #row{
     order: -1;
 }
@@ -408,6 +484,28 @@
         #add{
             justify-content: center;
         }
+    }
+
+    @include centered();
+
+    //MODAL
+    /* Modal Content */
+    .modal-content {
+        margin-top: 50%;
+        padding: 30px;
+        .txt-modal{
+            font-size: 25px;
+            margin-bottom: -30px;
+        }
+    }
+      
+      /* The Close Button */
+    .close {
+        margin-left: -5px;
+    }
+
+    #inpHeart{
+        padding: 6px;
     }
 }
 

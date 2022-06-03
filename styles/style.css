@@ -9,6 +9,85 @@ html, body {
   font-family: "Roboto", sans-serif;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 50px;
+  border: 5px solid #888;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.modal-content .btn-modal {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.modal-content .txt-modal {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* The Close Button */
+.close {
+  padding: 10px 30px 10px 10px;
+  background-color: #074EE8;
+  background-image: url(../../images/check.png);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close:hover {
+  background-color: #063eba;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
 .top-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -100,6 +179,32 @@ html, body {
   color: #074EE8;
   -webkit-transition: 360ms ease-in-out;
   transition: 360ms ease-in-out;
+}
+
+#inpHeart {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  border: 2px solid #b6b4b4;
+  border-radius: 0 5px 5px 0;
+  border-left: 0px;
+  padding: 8px;
+}
+
+#input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#input:hover {
+  background-color: #f0f0f0;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
 }
 
 .form-container {
@@ -634,6 +739,36 @@ html, body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  /* Modal Content */
+  .modal-content {
+    margin-top: 50%;
+    padding: 30px;
+  }
+  .modal-content .txt-modal {
+    font-size: 25px;
+    margin-bottom: -30px;
+  }
+  /* The Close Button */
+  .close {
+    margin-left: -5px;
+  }
+  #inpHeart {
+    padding: 6px;
   }
 }
 

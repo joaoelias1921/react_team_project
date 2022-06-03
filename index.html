@@ -122,11 +122,14 @@
                         </div>
                     </div>
                 </form>
-                <form class="form3" style="display: none">
+                <form class="form3" style="display: none" onsubmit="sub(event);">
                     <div class="form-group" id="form1">
                         <label for="certificates">Certificates</label>
-                        <input type="text" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" id="certificates" autofocus>
-                    </div>
+                        <div id="input">
+                            <input type="text" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" id="certificates" style="border-radius: 5px 0 0 5px;border-right: 0px;" autofocus>
+                            <a id="inpHeart" name="none" class="far fa-heart"></a>
+                        </div>
+                    </div>                    
     
                     <div class="morebtn-container">
                         <button id="add" class="more-btn"> <img class="add" src="./images/Leading Icon.png" alt="+"> More <img class="target" src="./images/Trailing Icon.png" alt=""></button>
@@ -151,11 +154,23 @@
     
                     <div class="form-footer">
                         <div class="btn-container">
-                            <button class="finish-btn" type="submit"><img src="./images/check.png"> Finish</button>
+                            <button id="finish" class="finish-btn" type="submit"><img src="./images/check.png"> Finish</button>
                         </div>
                     </div>
                 </form>
         </section>
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="txt-modal">
+                    <p>Information submitted successfully!</p>
+                </div>
+                <div class="btn-modal">
+                    <span class="close">Close</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="./js/lib/dobPopulation.js"></script>
