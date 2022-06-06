@@ -211,7 +211,7 @@ var span = document.getElementsByClassName("close")[0];
 var btn5 = document.getElementById("finish");
 btn5.onclick = function() {
     if(!validateCertificatesForm()) {
-        
+        return;
     }else{
         modal.style.display = "block";
     }    
@@ -241,8 +241,8 @@ window.onclick = function(event) {
 function sub(event){
     event.preventDefault();
     modal.style.display = "block";
-    /*setTimeout(function(){ 
+    setTimeout(function(){ 
         //Aqui coloca a função para ir para a ultima tela
         window.location.href = "list.html";
-    }, 10000);*/
+    }, 10000);
 }
