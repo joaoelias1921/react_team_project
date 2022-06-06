@@ -9,6 +9,85 @@ html, body {
   font-family: "Roboto", sans-serif;
 }
 
+/* The Modal (background) */
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 50px;
+  border: 5px solid #888;
+  width: 50%;
+  border-radius: 20px;
+}
+
+.modal-content .btn-modal {
+  text-align: center;
+  padding-top: 4rem;
+}
+
+.modal-content .txt-modal {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* The Close Button */
+.close {
+  padding: 10px 30px 10px 10px;
+  background-color: #074EE8;
+  background-image: url(../../images/check.png);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close:hover {
+  background-color: #063eba;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
 .top-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -98,6 +177,35 @@ html, body {
 .top-content .navigation .nav-buttons .selected-btn {
   border-bottom: 2px solid #074EE8;
   color: #074EE8;
+  -webkit-transition: 360ms ease-in-out;
+  transition: 360ms ease-in-out;
+}
+
+#inpHeart {
+  color: black;
+  font-size: 20px;
+  text-decoration: none;
+  border: 2px solid #b6b4b4;
+  border-radius: 0 5px 5px 0;
+  border-left: 0px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+#input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#input:hover {
+  background-color: #f0f0f0;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
 }
 
 .form-container {
@@ -117,7 +225,7 @@ html, body {
   text-align: center;
 }
 
-.form-container .form {
+.form-container .form1, .form-container .form2, .form-container .form3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -135,7 +243,7 @@ html, body {
   width: 60%;
 }
 
-.form-container .form .form-group {
+.form-container .form1 .form-group, .form-container .form2 .form-group, .form-container .form3 .form-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -154,7 +262,7 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .form-group label {
+.form-container .form1 .form-group label, .form-container .form2 .form-group label, .form-container .form3 .form-group label {
   -ms-flex-item-align: start;
       align-self: flex-start;
   font-size: small;
@@ -162,7 +270,7 @@ html, body {
   margin-bottom: 0.5%;
 }
 
-.form-container .form .form-group input {
+.form-container .form1 .form-group input, .form-container .form2 .form-group input, .form-container .form3 .form-group input {
   width: 100%;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -172,13 +280,13 @@ html, body {
   border-radius: 5px;
 }
 
-.form-container .form .form-group input:hover {
+.form-container .form1 .form-group input:hover, .form-container .form2 .form-group input:hover, .form-container .form3 .form-group input:hover {
   background-color: #f0f0f0;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
 }
 
-.form-container .form .row {
+.form-container .form1 .row, .form-container .form2 .row, .form-container .form3 .row {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
@@ -189,7 +297,7 @@ html, body {
   margin-bottom: 5%;
 }
 
-.form-container .form .row .form-email {
+.form-container .form1 .row .form-email, .form-container .form2 .row .form-email, .form-container .form3 .row .form-email {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,11 +308,11 @@ html, body {
   width: 65%;
 }
 
-.form-container .form .row .form-email input {
+.form-container .form1 .row .form-email input, .form-container .form2 .row .form-email input, .form-container .form3 .row .form-email input {
   width: 100%;
 }
 
-.form-container .form .row .form-phone {
+.form-container .form1 .row .form-phone, .form-container .form2 .row .form-phone, .form-container .form3 .row .form-phone {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -215,13 +323,13 @@ html, body {
   width: 30%;
 }
 
-.form-container .form .row .form-phone input {
+.form-container .form1 .row .form-phone input, .form-container .form2 .row .form-phone input, .form-container .form3 .row .form-phone input {
   -ms-flex-item-align: start;
       align-self: flex-start;
   width: 100%;
 }
 
-.form-container .form .birthdate-age {
+.form-container .form1 .birthdate-age, .form-container .form2 .birthdate-age, .form-container .form3 .birthdate-age {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -239,18 +347,18 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title {
+.form-container .form1 .birthdate-age .birthdate-title, .form-container .form2 .birthdate-age .birthdate-title, .form-container .form3 .birthdate-age .birthdate-title {
   width: 100%;
 }
 
-.form-container .form .birthdate-age .birthdate-title h2 {
+.form-container .form1 .birthdate-age .birthdate-title h2, .form-container .form2 .birthdate-age .birthdate-title h2, .form-container .form3 .birthdate-age .birthdate-title h2 {
   text-align: left;
   font-size: 1rem;
   color: gray;
   margin-bottom: 2%;
 }
 
-.form-container .form .birthdate-age .birthdate-data {
+.form-container .form1 .birthdate-age .birthdate-data, .form-container .form2 .birthdate-age .birthdate-data, .form-container .form3 .birthdate-age .birthdate-data {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -261,7 +369,7 @@ html, body {
   margin-bottom: 5%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group, .form-container .form3 .birthdate-age .birthdate-data .birth-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -279,7 +387,7 @@ html, body {
   width: 20%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group label {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group label, .form-container .form2 .birthdate-age .birthdate-data .birth-group label, .form-container .form3 .birthdate-age .birthdate-data .birth-group label {
   -ms-flex-item-align: start;
       align-self: flex-start;
   font-size: small;
@@ -287,7 +395,7 @@ html, body {
   margin-bottom: 2%;
 }
 
-.form-container .form .birthdate-age .birthdate-data .birth-group select {
+.form-container .form1 .birthdate-age .birthdate-data .birth-group select, .form-container .form2 .birthdate-age .birthdate-data .birth-group select, .form-container .form3 .birthdate-age .birthdate-data .birth-group select {
   width: 100%;
   -ms-flex-item-align: start;
       align-self: flex-start;
@@ -298,7 +406,7 @@ html, body {
   color: gray;
 }
 
-.form-container .form .birthdate-age .birthdate-data .age input {
+.form-container .form1 .birthdate-age .birthdate-data .age input, .form-container .form2 .birthdate-age .birthdate-data .age input, .form-container .form3 .birthdate-age .birthdate-data .age input {
   width: 100%;
   outline: none;
   padding: 10px 0 10px 10px;
@@ -306,7 +414,7 @@ html, body {
   border-radius: 5px;
 }
 
-.form-container .form .form-footer {
+.form-container .form1 .form-footer, .form-container .form2 .form-footer, .form-container .form3 .form-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -324,7 +432,7 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .form-footer .check-group {
+.form-container .form1 .form-footer .check-group, .form-container .form2 .form-footer .check-group, .form-container .form3 .form-footer .check-group {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -348,19 +456,19 @@ html, body {
           justify-content: flex-start;
 }
 
-.form-container .form .form-footer .check-group #terms-check {
+.form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check, .form-container .form3 .form-footer .check-group #terms-check {
   -webkit-transform: scale(1.6);
           transform: scale(1.6);
   margin-right: 2%;
   outline: none;
 }
 
-.form-container .form .form-footer .check-group #terms-check:checked {
+.form-container .form1 .form-footer .check-group #terms-check:checked, .form-container .form2 .form-footer .check-group #terms-check:checked, .form-container .form3 .form-footer .check-group #terms-check:checked {
   -webkit-box-shadow: 0 3px 5px 0 #b6b6b6;
           box-shadow: 0 3px 5px 0 #b6b6b6;
 }
 
-.form-container .form .form-footer .btn-container {
+.form-container .form1 .form-footer .btn-container, .form-container .form2 .form-footer .btn-container, .form-container .form3 .form-footer .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -378,7 +486,7 @@ html, body {
   width: 100%;
 }
 
-.form-container .form .form-footer .btn-container .continue-btn {
+.form-container .form1 .form-footer .btn-container .continue-btn, .form-container .form1 .form-footer .btn-container .next-btn, .form-container .form1 .form-footer .btn-container .finish-btn, .form-container .form2 .form-footer .btn-container .continue-btn, .form-container .form2 .form-footer .btn-container .next-btn, .form-container .form2 .form-footer .btn-container .finish-btn, .form-container .form3 .form-footer .btn-container .continue-btn, .form-container .form3 .form-footer .btn-container .next-btn, .form-container .form3 .form-footer .btn-container .finish-btn {
   -ms-flex-item-align: end;
       align-self: flex-end;
   padding: 10px 30px 10px 10px;
@@ -393,10 +501,400 @@ html, body {
   border-radius: 5px;
 }
 
-.form-container .form .form-footer .btn-container .continue-btn:hover {
+.form-container .form1 .form-footer .btn-container .continue-btn:hover, .form-container .form1 .form-footer .btn-container .next-btn:hover, .form-container .form1 .form-footer .btn-container .finish-btn:hover, .form-container .form2 .form-footer .btn-container .continue-btn:hover, .form-container .form2 .form-footer .btn-container .next-btn:hover, .form-container .form2 .form-footer .btn-container .finish-btn:hover, .form-container .form3 .form-footer .btn-container .continue-btn:hover, .form-container .form3 .form-footer .btn-container .next-btn:hover, .form-container .form3 .form-footer .btn-container .finish-btn:hover {
   background-color: #063eba;
   -webkit-transition: 240ms ease-in-out;
   transition: 240ms ease-in-out;
+}
+
+.form-container .form1 .form-footer .btn-container .continue-btn img, .form-container .form1 .form-footer .btn-container .next-btn img, .form-container .form1 .form-footer .btn-container .finish-btn img, .form-container .form2 .form-footer .btn-container .continue-btn img, .form-container .form2 .form-footer .btn-container .next-btn img, .form-container .form2 .form-footer .btn-container .finish-btn img, .form-container .form3 .form-footer .btn-container .continue-btn img, .form-container .form3 .form-footer .btn-container .next-btn img, .form-container .form3 .form-footer .btn-container .finish-btn img {
+  padding-right: 9px;
+}
+
+.form-container .form1 .morebtn-container, .form-container .form2 .morebtn-container, .form-container .form3 .morebtn-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.form-container .form1 .morebtn-container .more-btn, .form-container .form2 .morebtn-container .more-btn, .form-container .form3 .morebtn-container .more-btn {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 10px 10px 10px 10px;
+  background-color: #074EE8;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-container .form1 .morebtn-container .more-btn:hover, .form-container .form2 .morebtn-container .more-btn:hover, .form-container .form3 .morebtn-container .more-btn:hover {
+  background-color: #063eba;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
+.form-container .form1 .morebtn-container .more-btn .add, .form-container .form2 .morebtn-container .more-btn .add, .form-container .form3 .morebtn-container .more-btn .add {
+  padding-right: 7px;
+}
+
+.form-container .form1 .morebtn-container .more-btn .target, .form-container .form2 .morebtn-container .more-btn .target, .form-container .form3 .morebtn-container .more-btn .target {
+  padding-left: 7px;
+}
+
+.form-container .form1 .ocult, .form-container .form2 .ocult, .form-container .form3 .ocult {
+  display: none;
+}
+
+.form-container .form1 .certificates, .form-container .form2 .certificates, .form-container .form3 .certificates {
+  width: 100%;
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.form-container .form1 .cert, .form-container .form2 .cert, .form-container .form3 .cert {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+}
+
+.form-container .form1 .cert .delete, .form-container .form2 .cert .delete, .form-container .form3 .cert .delete {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  color: rgba(255, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form1 .cert .delete:hover, .form-container .form2 .cert .delete:hover, .form-container .form3 .cert .delete:hover {
+  color: white;
+  background-color: rgba(255, 0, 0, 0.5);
+}
+
+.form-container .form1 .cert .edit, .form-container .form2 .cert .edit, .form-container .form3 .cert .edit {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  color: rgba(0, 0, 0, 0.5);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.form-container .form1 .cert .edit2, .form-container .form2 .cert .edit2, .form-container .form3 .cert .edit2 {
+  font-size: 15px;
+  padding: 10px 15px 10px 15px;
+  background-color: rgba(0, 102, 255, 0.384);
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.list-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.list-page .top-content-list-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 85%;
+}
+
+.list-page .top-content-list-page .main-title {
+  width: 100%;
+}
+
+.list-page .top-content-list-page .main-title h1 {
+  text-align: left;
+  margin: 5% auto;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.list-page .top-content-list-page .navigation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.list-page .top-content-list-page .navigation .nav-buttons-list-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.list-page .top-content-list-page .navigation .nav-buttons-list-page button {
+  width: 100%;
+  padding: 15px;
+  font-size: 1rem;
+  background-color: white;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid #074EE8;
+  margin-bottom: 5%;
+  cursor: pointer;
+}
+
+.list-page .top-content-list-page .navigation .nav-buttons-list-page button:hover {
+  background-color: #ececff;
+  -webkit-transition: 360ms ease-in-out;
+  transition: 360ms ease-in-out;
+}
+
+.list-page .profiles-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 85%;
+}
+
+.list-page .profiles-container .cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 100%;
+  border: 2px solid #074EE8;
+  border-radius: 20px;
+}
+
+.list-page .profiles-container .cards-container .mydata-title {
+  width: 90%;
+  margin-top: 5%;
+  border-top: 8px solid #074EE8;
+}
+
+.list-page .profiles-container .cards-container .mydata-title h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 20px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.list-page .profiles-container .cards-container .mydata-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 90%;
+  overflow-wrap: break-word;
+  margin-bottom: 2%;
+}
+
+.list-page .profiles-container .cards-container .mydata-container li {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  list-style: none;
+  margin-bottom: 5%;
+  overflow-wrap: break-word;
+}
+
+.list-page .profiles-container .cards-container .mydata-container li span {
+  font-weight: bold;
+}
+
+.list-page .profiles-container .cards-container .certificates-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 90%;
+  overflow-wrap: break-word;
+  margin-bottom: 5%;
+}
+
+.list-page .profiles-container .cards-container .certificates-container h3 {
+  text-align: left;
+  font-size: 1.2rem;
+  padding-top: 20px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.list-page .profiles-container .cards-container .certificates-container li {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  list-style: none;
+  margin-bottom: 5%;
+  overflow-wrap: break-word;
+}
+
+.list-page .home-button {
+  margin: 5% auto;
+  width: 85%;
+}
+
+.list-page .home-button #modal-finish {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  padding: 10px 30px 10px 10px;
+  background-color: #074EE8;
+  background-image: url(../../images/white-arrow.png);
+  background-repeat: no-repeat;
+  background-position: center right 10px;
+  width: 100%;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.list-page .home-button #modal-finish:hover {
+  background-color: #063eba;
+  -webkit-transition: 240ms ease-in-out;
+  transition: 240ms ease-in-out;
+}
+
+#heart {
+  font-size: 20px;
+  padding: 10px 10px 0 0;
+}
+
+#heart-selected {
+  padding: 10px 10px 0 0;
+  font-size: 20px;
+  color: #074EE8;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+
+#row {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
 }
 
 @media screen and (max-width: 768px) {
@@ -412,7 +910,7 @@ html, body {
   .top-content .navigation .nav-buttons {
     width: 80%;
   }
-  .form-container .form {
+  .form-container .form1, .form-container .form2, .form-container .form3 {
     width: 80%;
   }
 }
@@ -421,29 +919,40 @@ html, body {
   * {
     font-size: 0.7rem;
   }
+  #inpHeart {
+    padding: 6.4px;
+  }
   .top-content .main-title h1 {
     padding: 10% 0 3% 0;
   }
   .top-content .navigation {
     margin-bottom: 5%;
   }
-  .form-container .form .form-group {
+  .form-container .form1 .form-group, .form-container .form2 .form-group, .form-container .form3 .form-group {
     margin-bottom: 7%;
   }
-  .form-container .form .birthdate-age {
+  .form-container .form1 .birthdate-age, .form-container .form2 .birthdate-age, .form-container .form3 .birthdate-age {
     margin-bottom: 5%;
   }
-  .form-container .form .birthdate-age .birthdate-title {
+  .form-container .form1 .birthdate-age .birthdate-title, .form-container .form2 .birthdate-age .birthdate-title, .form-container .form3 .birthdate-age .birthdate-title {
     margin-bottom: 1%;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group {
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group, .form-container .form3 .birthdate-age .birthdate-data .birth-group {
     width: 23%;
   }
-  .form-container .form .form-footer .check-group {
+  .form-container .form1 .form-footer .check-group, .form-container .form2 .form-footer .check-group, .form-container .form3 .form-footer .check-group {
     margin-bottom: 3%;
   }
-  .form-container .form .form-footer .check-group #terms-check {
+  .form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check, .form-container .form3 .form-footer .check-group #terms-check {
     margin-right: 3%;
+  }
+  .modal-content {
+    padding: 30px;
+    width: 80%;
+  }
+  .modal-content .txt-modal {
+    font-size: 20px;
+    margin-bottom: -30px;
   }
 }
 
@@ -452,40 +961,93 @@ html, body {
     font-size: 0.6rem;
   }
   .top-content .main-title h1 {
-    padding: 5% 0 8% 0;
+    padding: 8% 0 8% 0;
   }
-  .form-container .form .form-group input {
+  #inpHeart {
+    padding: 4px;
+  }
+  .form-container .form1 .form-group input, .form-container .form2 .form-group input, .form-container .form3 .form-group input {
     padding: 8px;
   }
-  .form-container .form .row .form-email {
+  .form-container .form1 .row .form-email, .form-container .form2 .row .form-email, .form-container .form3 .row .form-email {
     width: 60%;
   }
-  .form-container .form .row .form-email input {
+  .form-container .form1 .row .form-email input, .form-container .form2 .row .form-email input, .form-container .form3 .row .form-email input {
     padding-right: 0;
   }
-  .form-container .form .row .form-phone {
+  .form-container .form1 .row .form-phone, .form-container .form2 .row .form-phone, .form-container .form3 .row .form-phone {
     width: 35%;
   }
-  .form-container .form .row .form-phone input {
+  .form-container .form1 .row .form-phone input, .form-container .form2 .row .form-phone input, .form-container .form3 .row .form-phone input {
     padding-right: 0;
   }
-  .form-container .form .birthdate-age .birthdate-data {
+  .form-container .form1 .birthdate-age .birthdate-data, .form-container .form2 .birthdate-age .birthdate-data, .form-container .form3 .birthdate-age .birthdate-data {
     margin: 0;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group {
-    width: 35%;
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group, .form-container .form3 .birthdate-age .birthdate-data .birth-group {
+    width: 45%;
   }
-  .form-container .form .birthdate-age .birthdate-data .birth-group select {
+  .form-container .form1 .birthdate-age .birthdate-data .birth-group select, .form-container .form2 .birthdate-age .birthdate-data .birth-group select, .form-container .form3 .birthdate-age .birthdate-data .birth-group select {
     padding: 8px;
     margin-bottom: 5%;
+  }
+  .form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check, .form-container .form3 .form-footer .check-group #terms-check {
+    -webkit-transform: scale(1.4);
+            transform: scale(1.4);
+  }
+  .btn-container button, .morebtn-container button {
+    width: 100%;
+  }
+  .btn-container #add, .morebtn-container #add {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  /* Modal Content */
+  .modal-content {
+    margin-top: 50%;
+    padding: 30px;
+  }
+  .modal-content .txt-modal {
+    font-size: 25px;
+    margin-bottom: -30px;
+  }
+  /* The Close Button */
+  .close {
+    margin-left: -5px;
   }
 }
 
 @media screen and (max-width: 320px) {
   .top-content .main-title h1 {
     padding: 10% 0 8% 0;
+  }
+  .form-container .form1 .form-footer .check-group, .form-container .form2 .form-footer .check-group, .form-container .form3 .form-footer .check-group {
+    margin-bottom: 5%;
+  }
+  .form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check, .form-container .form3 .form-footer .check-group #terms-check {
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+  }
+  .modal-content .txt-modal {
+    font-size: 16px;
+    margin-bottom: -30px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -9,6 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/reset.css">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <title>React Team Project</title>
 </head>
 <body>
@@ -18,15 +19,15 @@
         </section>
         <section class="navigation">
             <div class="nav-buttons">
-                <button class="nav-btn selected-btn">Basic</button>
-                <button class="nav-btn">Social</button>
-                <button class="nav-btn">Certificates</button>
+                <button onclick="navigateToBasic()" class="nav-btn selected-btn">Basic</button>
+                <button onclick="navigateToSocial()" class="nav-btn" disabled>Social</button>
+                <button onclick="navigateToCertificates()" class="nav-btn" disabled>Certificates</button>
             </div>
         </section>
     </header>
     <main>
         <section class="form-container">
-            <form class="form">
+            <form class="form1">
                 <div class="form-group">
                     <label for="full-name">Full Name *</label>
                     <input name="fullname" type="text" placeholder="Foo Bar" id="full-name" onfocusout="saveToLocalStorage(this), validateName(this)" required autofocus>
@@ -87,14 +88,122 @@
                     </div>
                 </div>
             </form>
+            <form class="form2" style="display: none">
+                <div class="form-group">
+                    <label for="linkdin-link">LinkedIn</label>
+                    <input
+                        name="linkdin-link"
+                        type="text"
+                        placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/"
+                        id="linkdin-link"
+                        onkeypress="verifyLinkdinLink()"
+                        onkeydown="verifyLinkdinLink()"
+                        onkeyup="verifyLinkdinLink()"
+                        onfocusout="saveToLocalStorage(this)"
+                    />
+                    </div>
+                    <div class="form-group">
+                    <label for="github-link">Github *</label>
+                    <input
+                        name="github-link"
+                        type="text"
+                        placeholder="https://github.com/foobar"
+                        id="github-link"
+                        onkeypress="verifyGithubLink()"
+                        onkeydown="verifyGithubLink()"
+                        onkeyup="verifyGithubLink()"
+                        onfocusout="saveToLocalStorage(this)"
+                        required
+                    />
+                    </div>
+                    <div class="form-footer">
+                        <div class="btn-container">
+                            <button class="next-btn" type="submit">Next</button>
+                        </div>
+                    </div>
+                </form>
+                <form class="form3" style="display: none" onsubmit="sub(event);">
+                    <div class="form-group" id="form1">
+                        <label for="certificates">Certificates</label>
+                        <div id="input">
+                            <input type="text" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" id="certificates" style="border-radius: 5px 0 0 5px;border-right: 0px;" autofocus>
+                            <a id="inpHeart" name="none" class="far fa-heart"></a>
+                        </div>
+                    </div>                    
+    
+                    <div class="morebtn-container">
+                        <button id="add" class="more-btn"> <img class="add" src="./images/Leading Icon.png" alt="+"> More <img class="target" src="./images/Trailing Icon.png" alt=""></button>
+                    </div>
+    
+                    <div id="grupo-lista" class="certificates"></div>                    
+    
+                    <div class="form-group">
+                        <label class="team-name" for="teamName">Team Name *</label>
+                        <input name="teamName" type="text" placeholder="https://www.linkedin.com/in/foo-bar-3a0560104/" id="teamName" onfocusout="saveToLocalStorage(this)" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="institution">Institution *</label>
+                        <input name="institution" type="text" placeholder="Universidade Federal da Paraíba" id="institution" onfocusout="saveToLocalStorage(this)" required>
+                    </div>
+    
+                    <div class="form-group">
+                        <label for="graduation">Graduation *</label>
+                        <input name="graduation" type="text" placeholder="Ciências da Computação" id="graduation" onfocusout="saveToLocalStorage(this)" required>
+                    </div>
+    
+                    <div class="form-footer">
+                        <div class="btn-container">
+                            <button id="finish" class="finish-btn" type="submit"><img src="./images/check.png"> Finish</button>
+                        </div>
+                    </div>
+                </form>
         </section>
+
+        <div class="list-page" style="display: none;">
+            <div class="top-content-list-page">
+                <section class="main-title">
+                    <h1>Registered Profiles</h1>
+                </section>
+                <section class="navigation">
+                    <div class="nav-buttons-list-page">
+                        <button onclick="navigateToSocial()" class="nav-btn">Profiles</button>
+                    </div>
+                </section>
+            </div>
+            <div class="profiles-container">
+              <div class="cards-container">
+                <!-- card -->
+                
+              </div>
+            </div>
+            <div class="home-button">
+                <button id="modal-finish" class="continue-btn" type="button">Home</button>
+            </div>            
+        </div>
+
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="txt-modal">
+                    <p>Information submitted successfully!</p>
+                </div>
+                <div class="btn-modal">
+                    <span id="modal-finish" class="close">Close</span>
+                </div>
+            </div>
+        </div>
     </main>
 
     <script src="./js/lib/dobPopulation.js"></script>
     <script src="./js/lib/formValidation.js"></script>
+    <script src="./js/lib/navigation.js"></script>
+    <script src="./js/lib/list.js"></script>
     <script src="./js/lib/index.js"></script>
     <script src="./js/lib/localStorage.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="./js/lib/jquery.mask.js"></script>
+    <script src="./js/lib/jquery.mask.js"></script>    
+    <script src="./js/lib/links.js"></script>
+    <script src="./js/lib/certificates.js"></script>
 </body>
 </html>

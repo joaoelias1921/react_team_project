@@ -25,6 +25,8 @@ function populateDays() {
 }
 
 function populateMonths() {
+    month.innerHTML = "";
+    
     let option = `<option value="">Month</option>`;
 
     //populates the select element with months (option)
@@ -126,13 +128,6 @@ function ageCalculator() {
     
     //calculate the age of the user  
     let age = Math.abs(yearFromDate - 1970);
-    if(age <= 18){
-        alert("You must be at least 18 years old to proceed!");
-        day.value = "";
-        month.value = "";
-        year.value = "";
-        $("#age").value = 0;
-    }
     
     //display the calculated age
     $("#age").value = age;
