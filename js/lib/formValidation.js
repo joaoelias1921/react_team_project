@@ -93,12 +93,17 @@ $(".finish-btn").addEventListener("click", (event) => {
 function validateCertificatesForm() {
     let inputs = [];
     inputs.push(teamName, institution, graduation);
+    let valid = false;
 
     for(input of inputs) {
         if(input.value == "") {
             input.style.border = "1px solid red";
+            valid = false;
         }else {
             input.style.border = null;
+            valid = true;
         }
     }
+
+    return valid;
 }

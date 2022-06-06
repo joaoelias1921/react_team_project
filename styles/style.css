@@ -660,7 +660,7 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  width: 60%;
+  width: 85%;
 }
 
 .list-page .top-content-list-page .main-title {
@@ -713,6 +713,7 @@ html, body {
 .list-page .top-content-list-page .navigation .nav-buttons-list-page button {
   width: 100%;
   padding: 15px;
+  font-size: 1rem;
   background-color: white;
   outline: none;
   border: none;
@@ -742,7 +743,7 @@ html, body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
-  width: 60%;
+  width: 85%;
 }
 
 .list-page .profiles-container .cards-container {
@@ -765,15 +766,21 @@ html, body {
   border-radius: 20px;
 }
 
-.list-page .profiles-container .cards-container h3 {
-  text-align: center;
+.list-page .profiles-container .cards-container .mydata-title {
+  width: 90%;
+  margin-top: 5%;
   border-top: 8px solid #074EE8;
-  font-size: 1.2rem;
-  padding-top: 20px;
-  margin: 5% auto;
 }
 
-.list-page .profiles-container .cards-container div {
+.list-page .profiles-container .cards-container .mydata-title h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  padding-top: 20px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.list-page .profiles-container .cards-container .mydata-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -789,18 +796,63 @@ html, body {
           align-items: center;
   text-align: center;
   width: 90%;
+  overflow-wrap: break-word;
+  margin-bottom: 2%;
 }
 
-.list-page .profiles-container .cards-container div li {
+.list-page .profiles-container .cards-container .mydata-container li {
   width: 100%;
   text-align: left;
+  font-size: 1rem;
   list-style: none;
-  margin-bottom: 2%;
+  margin-bottom: 5%;
+  overflow-wrap: break-word;
+}
+
+.list-page .profiles-container .cards-container .mydata-container li span {
+  font-weight: bold;
+}
+
+.list-page .profiles-container .cards-container .certificates-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 90%;
+  overflow-wrap: break-word;
+  margin-bottom: 5%;
+}
+
+.list-page .profiles-container .cards-container .certificates-container h3 {
+  text-align: left;
+  font-size: 1.2rem;
+  padding-top: 20px;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+.list-page .profiles-container .cards-container .certificates-container li {
+  width: 100%;
+  text-align: left;
+  font-size: 1rem;
+  list-style: none;
+  margin-bottom: 5%;
+  overflow-wrap: break-word;
 }
 
 .list-page .home-button {
   margin: 5% auto;
-  width: 60%;
+  width: 85%;
 }
 
 .list-page .home-button #modal-finish {
@@ -894,6 +946,14 @@ html, body {
   .form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check, .form-container .form3 .form-footer .check-group #terms-check {
     margin-right: 3%;
   }
+  .modal-content {
+    padding: 30px;
+    width: 80%;
+  }
+  .modal-content .txt-modal {
+    font-size: 20px;
+    margin-bottom: -30px;
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -927,7 +987,7 @@ html, body {
         flex-wrap: wrap;
   }
   .form-container .form1 .birthdate-age .birthdate-data .birth-group, .form-container .form2 .birthdate-age .birthdate-data .birth-group, .form-container .form3 .birthdate-age .birthdate-data .birth-group {
-    width: 35%;
+    width: 45%;
   }
   .form-container .form1 .birthdate-age .birthdate-data .birth-group select, .form-container .form2 .birthdate-age .birthdate-data .birth-group select, .form-container .form3 .birthdate-age .birthdate-data .birth-group select {
     padding: 8px;
@@ -984,6 +1044,10 @@ html, body {
   .form-container .form1 .form-footer .check-group #terms-check, .form-container .form2 .form-footer .check-group #terms-check, .form-container .form3 .form-footer .check-group #terms-check {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
+  }
+  .modal-content .txt-modal {
+    font-size: 16px;
+    margin-bottom: -30px;
   }
 }
 /*# sourceMappingURL=style.css.map */

@@ -341,7 +341,7 @@
     width: 100%;
     .top-content-list-page {
         @include centered();
-        width: 60%;
+        width: 85%;
         .main-title {
             width: 100%;
             h1 {
@@ -360,6 +360,7 @@
                 button {
                     width: 100%;
                     padding: 15px;
+                    font-size: 1rem;
                     background-color: white;
                     outline: none;
                     border: none;
@@ -376,34 +377,69 @@
     }
     .profiles-container {                
         @include centered();
-        width: 60%;
+        width: 85%;
         .cards-container {
             @include centered();
             width: 100%;
             border: 2px solid $primaryColor;
             border-radius: 20px;
-            h3 {
-                text-align: center;
+            .mydata-title {
+                width: 90%;
+                margin-top: 5%;
                 border-top: 8px solid $primaryColor;
-                font-size: 1.2rem;
-                padding-top: 20px;
-                margin: 5% auto;
+                h3 {
+                    text-align: center;
+                    font-size: 1.2rem;
+                    padding-top: 20px;
+                    font-weight: bold;
+                    margin-bottom: 5%
+                }
             }
-            div {
+
+            .mydata-container {
                 @include centered();
                 width: 90%;
+                overflow-wrap: break-word;
+                margin-bottom: 2%;
                 li {
                     width: 100%;
                     text-align: left;
+                    font-size: 1rem;
                     list-style: none;
-                    margin-bottom: 2%;
+                    margin-bottom: 5%;
+                    overflow-wrap: break-word;
+                    span {                        
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .certificates-container {
+                @include centered();
+                width: 90%;
+                overflow-wrap: break-word;
+                margin-bottom: 5%;
+                h3 {
+                    text-align: left;
+                    font-size: 1.2rem;
+                    padding-top: 20px;
+                    font-weight: bold;
+                    margin-bottom: 5%
+                }
+                li {
+                    width: 100%;
+                    text-align: left;
+                    font-size: 1rem;
+                    list-style: none;
+                    margin-bottom: 5%;
+                    overflow-wrap: break-word;
                 }
             }
         }
     }
     .home-button {
         margin: 5% auto;
-        width: 60%;
+        width: 85%;
         #modal-finish {
             align-self: flex-end;
             padding: 10px 30px 10px 10px;
@@ -511,6 +547,15 @@
             }
         }
     }
+
+    .modal-content {
+        padding: 30px;
+        width: 80%;
+        .txt-modal{
+            font-size: 20px;
+            margin-bottom: -30px;
+        }
+    }
 }
 
 @media screen and (max-width: 375px) {
@@ -555,7 +600,7 @@
                     margin: 0;
                     flex-wrap: wrap;
                     .birth-group {
-                        width: 35%;
+                        width: 45%;
                         select {
                             padding: 8px;
                             margin-bottom: 5%;
@@ -620,6 +665,13 @@
                     }
                 }
             }
+        }
+    }
+
+    .modal-content {
+        .txt-modal{
+            font-size: 16px;
+            margin-bottom: -30px;
         }
     }
 }

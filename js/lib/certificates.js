@@ -140,10 +140,7 @@ function renderizarPropostas(){
 btnMore.onclick = function(event){
     event.preventDefault();
 
-    var expression = /(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9]+\.[^\s]{2,}|www\.[a-zA-Z0-9]+\.[^\s]{2,})/gi;
-    var teste = expression.test(input1.value);
-
-    if(teste == true){
+    if(input1.value != ""){
         let proposta1 = input1.value;
         let favorited = document.getElementById('inpHeart');
 
@@ -213,7 +210,11 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 var btn5 = document.getElementById("finish");
 btn5.onclick = function() {
-    modal.style.display = "block";
+    if(!validateCertificatesForm()) {
+        
+    }else{
+        modal.style.display = "block";
+    }    
 }
 
 span.onclick = function() {
@@ -240,8 +241,8 @@ window.onclick = function(event) {
 function sub(event){
     event.preventDefault();
     modal.style.display = "block";
-    setTimeout(function(){ 
+    /*setTimeout(function(){ 
         //Aqui coloca a função para ir para a ultima tela
         window.location.href = "list.html";
-    }, 10000);
+    }, 10000);*/
 }
