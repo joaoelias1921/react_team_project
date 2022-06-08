@@ -2,6 +2,7 @@ window.onload = function(){
     populateDays();
     populateMonths();
     populateYears();
+    showBirthdateFields()
     loadLocalStorage();
 };
 

@@ -4,17 +4,26 @@ let $ = document.querySelector.bind(document);
 let day = $("#day");
 let month = $("#month");
 let year = $("#year");
+let selects = document.querySelectorAll("select");
 
-day.addEventListener("change", () => {
-    month.removeAttribute("disabled");
-});
+//makes next birthdate field enabled once you select something
+function nextBirthdateField() {
+    for (let i = 1; i < selects.length; i++) {
+        if(selects[i-1].value != "") selects[i].removeAttribute("disabled");
+    }
+}
 
-month.addEventListener("change", () => {
-    year.removeAttribute("disabled");
-});
+//if fields were already filled, they will be available for change
+function showBirthdateFields() {
+    if(localStorage.getItem(year.name)) {
+        for(select of selects) {
+            select.removeAttribute("disabled");
+        }
+    }
+}
 
 function populateDays() {
-    let option = '<option value="">Day</option>';
+    let option = `<option value="">Day</option>`;
 
     //populates the select element with days (option)
     for (let i = 1; i <= days[0]; i++){

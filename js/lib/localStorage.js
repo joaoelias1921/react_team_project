@@ -21,20 +21,28 @@ function saveAgeToLS() {
     localStorage.setItem("age", age.value);
 }
 
+function saveCheckboxToLS(checkbox) {
+    localStorage.setItem(checkbox.name, checkbox.checked);
+}
+
 $(".continue-btn").addEventListener("click", saveAgeToLS);
 
-const loadLocalStorage = () => {
-    fullname.value = localStorage.getItem("fullname");
-    nickname.value = localStorage.getItem("nickname");
-    email.value = localStorage.getItem("email");
-    phone.value = localStorage.getItem("phone");
-    day.value = localStorage.getItem("dobDay");
-    month.value = localStorage.getItem("dobMonth");
-    year.value = localStorage.getItem("dobYear");
-    age.value = localStorage.getItem("age");
-    linkdin.value = localStorage.getItem("linkdin-link");
-    github.value = localStorage.getItem("github-link");
-    teamName.value = localStorage.getItem("teamName");
-    institution.value = localStorage.getItem("institution");
-    graduation.value = localStorage.getItem("graduation");
+function loadLocalStorage(){
+    let inputs = document.querySelectorAll("input");
+    let selects = document.querySelectorAll("select");
+    let termsCheck = $("#terms-check");
+
+    inputs.forEach((input) => {
+        input.value = localStorage.getItem(input.name);
+    });
+
+    selects.forEach((select) => {
+        if(!localStorage.getItem(select.name)){
+            return;
+        }else {
+            select.value = localStorage.getItem(select.name);
+        }        
+    })
+
+    termsCheck.checked = JSON.parse(localStorage.getItem("terms-check"))
 }

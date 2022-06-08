@@ -40,7 +40,7 @@ $(".continue-btn").addEventListener("click", (event) => {
 
 function validateBasicForm() {
     let termsCheck = $("#terms-check");
-    let valid = false;
+    let valid = true;
 
     let inputs = [];
     inputs.push(fullname, email, day, month, year);
@@ -48,16 +48,9 @@ function validateBasicForm() {
     for(input of inputs) {
         if(input.value == "") {
             input.style.border = "1px solid red";
-        }else {
-            input.style.border = null;
-        }
-    }
-
-    for(input of inputs) {
-        if(input.value == ""){
             valid = false;
         }else {
-            valid = true;
+            input.style.border = null;
         }
     }
 
