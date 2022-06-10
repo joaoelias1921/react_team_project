@@ -5,6 +5,9 @@ function getData() {
     window.dataArray = [];
 
     for(input of inputArray) {
+        if(input.value == "") {
+            input.value = "No data received!";
+        }
         dataArray.push(input.value);
     }
     for(select of selectArray) {
@@ -15,6 +18,8 @@ function getData() {
     }
 
     dataArray = dataArray.filter(e => e !== "");
+
+    console.log(dataArray);
 }
 
 function showCertificates() {
@@ -43,13 +48,13 @@ function getVariables() {
                 <li><span>Nickname</span> <br>${dataArray[1]}</li>
                 <li><span>E-mail</span> <br>${dataArray[2]}</li>
                 <li><span>Phone</span> <br>${dataArray[3]}</li>
-                <li><span>Date of Birth</span> <br>${dataArray[11]}/${dataArray[12]}/${dataArray[13]}</li>
+                <li><span>Date of Birth</span> <br>${dataArray[12]}/${dataArray[13]}/${dataArray[14]}</li>
                 <li><span>Age</span> <br>${dataArray[4]}</li>
                 <li><span>Linkedin</span> <br>${dataArray[6]}</li>
                 <li><span>Github</span> <br>${dataArray[7]} </li>
-                <li><span>Team Name</span> <br>${dataArray[8]}</li>
-                <li><span>Institution</span> <br>${dataArray[9]}</li>
-                <li><span>Graduation</span> <br>${dataArray[10]}</li>
+                <li><span>Team Name</span> <br>${dataArray[9]}</li>
+                <li><span>Institution</span> <br>${dataArray[10]}</li>
+                <li><span>Graduation</span> <br>${dataArray[11]}</li>
             </div>
         `;
     }else {
@@ -62,13 +67,13 @@ function getVariables() {
                 <li><span>Nickname</span> <br>${dataArray[1]}</li>
                 <li><span>E-mail</span> <br>${dataArray[2]}</li>
                 <li><span>Phone</span> <br>${dataArray[3]}</li>
-                <li><span>Date of Birth</span> <br>${dataArray[11]}/${dataArray[12]}/${dataArray[13]}</li>
+                <li><span>Date of Birth</span> <br>${dataArray[10]}/${dataArray[11]}/${dataArray[12]}</li>
                 <li><span>Age</span> <br>${dataArray[4]}</li>
-                <li><span>Linkedin</span> <br>${dataArray[6]}</li>
-                <li><span>Github</span> <br>${dataArray[7]} </li>
-                <li><span>Team Name</span> <br>${dataArray[8]}</li>
-                <li><span>Institution</span> <br>${dataArray[9]}</li>
-                <li><span>Graduation</span> <br>${dataArray[10]}</li>
+                <li><span>Linkedin</span> <br>${dataArray[5]}</li>
+                <li><span>Github</span> <br>${dataArray[6]} </li>
+                <li><span>Team Name</span> <br>${dataArray[7]}</li>
+                <li><span>Institution</span> <br>${dataArray[8]}</li>
+                <li><span>Graduation</span> <br>${dataArray[9]}</li>
             </div>
             <div class="certificates-container">
                 <h3>Certificates</h3>

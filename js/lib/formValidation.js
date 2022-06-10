@@ -45,14 +45,28 @@ function validateBasicForm() {
     let inputs = [];
     inputs.push(fullname, email, day, month, year);
 
-    for(input of inputs) {
+    inputs.forEach((input) => {
+        let formGroup = input.parentElement;
+        errorMsg = formGroup.querySelector(".error-message");
+
         if(input.value == "") {
             input.style.border = "1px solid red";
             valid = false;
+            
+            if(!errorMsg){                
+                let span = document.createElement("span");
+                span.textContent = "This field is required!";
+                span.className = "error-message";
+                input.after(span);
+            }
         }else {
             input.style.border = null;
+            let errors = formGroup.getElementsByClassName("error-message");
+            while (errors[0]) {
+                errors[0].parentNode.removeChild(errors[0]);
+            }
         }
-    }
+    });
 
     if(valid) {
         if(!termsCheck.checked){
@@ -70,9 +84,23 @@ $(".next-btn").addEventListener("click", (event) => {
 });
 
 function validateSocialForm() {
+    let formGroup = github.parentElement;
+    errorMsg = formGroup.querySelector(".error-message");
+
     if(github.value == "") {
         github.style.border = "1px solid red";
+
+        if(!errorMsg){
+            let span = document.createElement("span");
+            span.textContent = "This field is required!";
+            span.className = "error-message";
+            github.after(span);
+        }
     }else{
+        let errors = formGroup.getElementsByClassName("error-message");
+        while (errors[0]) {
+            errors[0].parentNode.removeChild(errors[0]);
+        }
         navButtons[2].removeAttribute("disabled");
         navigateToCertificates();
     }
@@ -84,19 +112,32 @@ $(".finish-btn").addEventListener("click", (event) => {
 });
 
 function validateCertificatesForm() {
+    let valid = true;
     let inputs = [];
     inputs.push(teamName, institution, graduation);
-    let valid = false;
 
-    for(input of inputs) {
+    inputs.forEach((input) => {
+        let formGroup = input.parentElement;
+        errorMsg = formGroup.querySelector(".error-message");
+
         if(input.value == "") {
             input.style.border = "1px solid red";
             valid = false;
+
+            if(!errorMsg){
+                let span = document.createElement("span");
+                span.textContent = "This field is required!";
+                span.className = "error-message";
+                input.after(span);
+            }
         }else {
             input.style.border = null;
-            valid = true;
+            let errors = formGroup.getElementsByClassName("error-message");
+            while (errors[0]) {
+                errors[0].parentNode.removeChild(errors[0]);
+            }
         }
-    }
+    });
 
     return valid;
 }

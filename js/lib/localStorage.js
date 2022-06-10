@@ -25,7 +25,10 @@ function saveCheckboxToLS(checkbox) {
     localStorage.setItem(checkbox.name, checkbox.checked);
 }
 
-$(".continue-btn").addEventListener("click", saveAgeToLS);
+$(".continue-btn").addEventListener("click", () => {
+    ageCalculator();
+    saveAgeToLS();
+});
 
 function loadLocalStorage(){
     let inputs = document.querySelectorAll("input");

@@ -477,6 +477,14 @@
     order: -1;
 }
 
+.error-message {
+    color: red;
+    width: 100%;
+    text-align: left;
+    margin-top: 2%;
+    font-size: 0.8rem;
+}
+
 @media screen and (max-width: 768px){
     * {
         font-size: 0.8rem;
