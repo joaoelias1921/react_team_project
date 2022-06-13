@@ -1,3 +1,4 @@
+//calls necessary functions on window load
 window.onload = function(){
     populateDays();
     populateMonths();

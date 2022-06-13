@@ -222,11 +222,10 @@ span.onclick = function() {
     $(".top-content").style.display = "none";
     $(".form-container").style.display = "none";
     $(".list-page").style.display = "flex";
-    getData();
-    getVariables();
+    getCardData();
     let allCards = document.querySelector(".cards-container").innerHTML;
     localStorage.setItem("allCards", allCards);
-    pai.innerHTML = localStorage.getItem("allCards");
+    cardsContainer.innerHTML = localStorage.getItem("allCards");
 }
 
 // When the user clicks anywhere outside of the modal, close it

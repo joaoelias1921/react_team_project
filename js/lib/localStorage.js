@@ -1,3 +1,4 @@
+//necessary variables used throughout the project
 let fullname = $("#full-name");
 let nickname = $("#nickname");
 let email = $("#email");
@@ -13,23 +14,28 @@ $(".form1").addEventListener("submit", (event) => {
     event.preventDefault();
 });
 
+//saves the data from the input fields to browser local storage
 function saveToLocalStorage(field) {
     if(field.value != "") localStorage.setItem(field.name, field.value);
 }
 
+//saves age data to local storage
 function saveAgeToLS() {
     localStorage.setItem("age", age.value);
 }
 
+//saves the checkbox state (checked or not) to local storage
 function saveCheckboxToLS(checkbox) {
     localStorage.setItem(checkbox.name, checkbox.checked);
 }
 
+//calls functions on button click
 $(".continue-btn").addEventListener("click", () => {
     ageCalculator();
     saveAgeToLS();
 });
 
+//loads all local storage information on every window load (called in index.js)
 function loadLocalStorage(){
     let inputs = document.querySelectorAll("input");
     let selects = document.querySelectorAll("select");

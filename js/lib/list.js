@@ -1,27 +1,9 @@
-// definindo variaveis para puxar valor do local storage
-function getData() {
-    let inputArray = document.querySelectorAll("input");
-    let selectArray = document.querySelectorAll("select");
-    window.dataArray = [];
-
-    for(input of inputArray) {
-        if(input.value == "") {
-            input.value = "No data received!";
-        }
-        dataArray.push(input.value);
-    }
-    for(select of selectArray) {
-        dataArray.push(select.value);
-    }
-    for(dado of dados) {
-        dataArray.push(dado.propostas);
-    }
-
-    dataArray = dataArray.filter(e => e !== "");
-
-    console.log(dataArray);
+//validation for fields that are not required
+function validateNullData(value) {
+    if(value){ return value } else return "No data received!";
 }
 
+//shows the certificates in the form, if any
 function showCertificates() {
     let lis;
 
@@ -36,25 +18,26 @@ function showCertificates() {
     return lis;
 }
 
-
-function getVariables() {
+//populates the templates for the cards that will show the data later on
+//also clears the local storage data in order to empty the form for a new data insertion
+function getCardData() {
     if(dados.length == 0){
         var template = `
             <div class="mydata-title">
                 <h3>My data</h3>
             </div>
             <div class="mydata-container">
-                <li><span>Full Name</span> <br>${dataArray[0]}</li>
-                <li><span>Nickname</span> <br>${dataArray[1]}</li>
-                <li><span>E-mail</span> <br>${dataArray[2]}</li>
-                <li><span>Phone</span> <br>${dataArray[3]}</li>
-                <li><span>Date of Birth</span> <br>${dataArray[12]}/${dataArray[13]}/${dataArray[14]}</li>
-                <li><span>Age</span> <br>${dataArray[4]}</li>
-                <li><span>Linkedin</span> <br>${dataArray[6]}</li>
-                <li><span>Github</span> <br>${dataArray[7]} </li>
-                <li><span>Team Name</span> <br>${dataArray[9]}</li>
-                <li><span>Institution</span> <br>${dataArray[10]}</li>
-                <li><span>Graduation</span> <br>${dataArray[11]}</li>
+                <li><span>Full Name</span> <br>${localStorage.getItem("fullname")}</li>
+                <li><span>Nickname</span> <br>${validateNullData(localStorage.getItem("nickname"))}</li>
+                <li><span>E-mail</span> <br>${localStorage.getItem("email")}</li>
+                <li><span>Phone</span> <br>${validateNullData(localStorage.getItem("phone"))}</li>
+                <li><span>Date of Birth</span> <br>${localStorage.getItem("dobDay")}/${localStorage.getItem("dobMonth")}/${localStorage.getItem("dobYear")}</li>
+                <li><span>Age</span> <br>${localStorage.getItem("age")}</li>
+                <li><span>Linkedin</span> <br>${validateNullData(localStorage.getItem("linkdin-link"))}</li>
+                <li><span>Github</span> <br>${localStorage.getItem("github-link")} </li>
+                <li><span>Team Name</span> <br>${localStorage.getItem("teamName")}</li>
+                <li><span>Institution</span> <br>${localStorage.getItem("institution")}</li>
+                <li><span>Graduation</span> <br>${localStorage.getItem("graduation")}</li>
             </div>
         `;
     }else {
@@ -63,17 +46,17 @@ function getVariables() {
                 <h3>My data</h3>
             </div>
             <div class="mydata-container">
-                <li><span>Full Name</span> <br>${dataArray[0]}</li>
-                <li><span>Nickname</span> <br>${dataArray[1]}</li>
-                <li><span>E-mail</span> <br>${dataArray[2]}</li>
-                <li><span>Phone</span> <br>${dataArray[3]}</li>
-                <li><span>Date of Birth</span> <br>${dataArray[10]}/${dataArray[11]}/${dataArray[12]}</li>
-                <li><span>Age</span> <br>${dataArray[4]}</li>
-                <li><span>Linkedin</span> <br>${dataArray[5]}</li>
-                <li><span>Github</span> <br>${dataArray[6]} </li>
-                <li><span>Team Name</span> <br>${dataArray[7]}</li>
-                <li><span>Institution</span> <br>${dataArray[8]}</li>
-                <li><span>Graduation</span> <br>${dataArray[9]}</li>
+                <li><span>Full Name</span> <br>${localStorage.getItem("fullname")}</li>
+                <li><span>Nickname</span> <br>${validateNullData(localStorage.getItem("nickname"))}</li>
+                <li><span>E-mail</span> <br>${localStorage.getItem("email")}</li>
+                <li><span>Phone</span> <br>${validateNullData(localStorage.getItem("phone"))}</li>
+                <li><span>Date of Birth</span> <br>${localStorage.getItem("dobDay")}/${localStorage.getItem("dobMonth")}/${localStorage.getItem("dobYear")}</li>
+                <li><span>Age</span> <br>${localStorage.getItem("age")}</li>
+                <li><span>Linkedin</span> <br>${validateNullData(localStorage.getItem("linkdin-link"))}</li>
+                <li><span>Github</span> <br>${localStorage.getItem("github-link")} </li>
+                <li><span>Team Name</span> <br>${localStorage.getItem("teamName")}</li>
+                <li><span>Institution</span> <br>${localStorage.getItem("institution")}</li>
+                <li><span>Graduation</span> <br>${localStorage.getItem("graduation")}</li>
             </div>
             <div class="certificates-container">
                 <h3>Certificates</h3>
@@ -84,11 +67,11 @@ function getVariables() {
 
     localStorage.clear();
 
-    var pai = document.querySelector('.cards-container');
-    if(pai.innerHTML.includes("null") || pai.innerHTML.includes("undefined")){
-        pai.innerHTML = "";
+    var cardsContainer = document.querySelector('.cards-container');
+    if(cardsContainer.innerHTML.includes("null") || cardsContainer.innerHTML.includes("undefined")){
+        cardsContainer.innerHTML = "";
     }
-    pai.innerHTML += template;
+    cardsContainer.innerHTML += template;
     localStorage.setItem("card", template);
 }
 
@@ -97,5 +80,5 @@ document.querySelector("#modal-finish").addEventListener("click", (event) => {
     document.location.reload();
 });
 
-var pai = document.querySelector('.cards-container');
-pai.innerHTML += localStorage.getItem("card");
+var cardsContainer = document.querySelector('.cards-container');
+cardsContainer.innerHTML += localStorage.getItem("card");
