@@ -1,4 +1,4 @@
-// function if the github link is null then it will put a red border around github link input
+// function that verifies if the github input is empty, putting a red border around it
 document
   .getElementsByClassName("next-btn")[0]
   .addEventListener("click", (event) => {
@@ -7,7 +7,7 @@ document
     }
   });
 
-// validating the linkdin and github links
+// validating the linkedin and github links
 function verifyLinkdinLink() {
   var regexp =
     /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;

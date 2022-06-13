@@ -7,7 +7,7 @@ var input1 = $('#certificates');
 var dados = JSON.parse(localStorage.getItem('dados')) || [];
 renderizarPropostas();
 
-var FAVORITO;
+var favorite;
 
 var btnHeart = document.getElementById('inpHeart');
 
@@ -15,13 +15,13 @@ btnHeart.onclick = function(event){
     event.preventDefault();
     
     if(btnHeart.name == "none"){
-        FAVORITO = true;
+        favorite = true;
         btnHeart.name = "yes";
         btnHeart.setAttribute("class","fas fa-heart");
         btnHeart.style.color = "#074EE8";
     }else{
         btnHeart.style.color = "black";
-        FAVORITO = false;
+        favorite = false;
         btnHeart.name = "none";
         btnHeart.setAttribute("class","far fa-heart");
     }
@@ -30,7 +30,7 @@ btnHeart.onclick = function(event){
 function resetaCoracao(){
     let btnHeart = document.getElementById('inpHeart');
     btnHeart.style.color = "black";
-    FAVORITO = false;
+    favorite = false;
     btnHeart.name = "none";
     btnHeart.setAttribute("class","far fa-heart");
 }
@@ -142,9 +142,8 @@ btnMore.onclick = function(event){
 
     if(input1.value != ""){
         let proposta1 = input1.value;
-        let favorited = document.getElementById('inpHeart');
 
-        if(FAVORITO == true){
+        if(favorite == true){
             dados.push({propostas: proposta1, indice: dados.length, fav: true});
         }else{
             dados.push({propostas: proposta1, indice: dados.length, fav: false});
@@ -210,8 +209,9 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 var btn5 = document.getElementById("finish");
 btn5.onclick = function() {
+    //form validation
     if(!validateCertificatesForm()) {
-        
+        return;
     }else{
         modal.style.display = "block";
     }    
@@ -219,15 +219,13 @@ btn5.onclick = function() {
 
 span.onclick = function() {
     modal.style.display = "none";
-    //Aqui coloca a função para ir para a ultima tela
     $(".top-content").style.display = "none";
     $(".form-container").style.display = "none";
     $(".list-page").style.display = "flex";
-    getData();
-    getVariables();
+    getCardData();
     let allCards = document.querySelector(".cards-container").innerHTML;
     localStorage.setItem("allCards", allCards);
-    pai.innerHTML = localStorage.getItem("allCards");
+    cardsContainer.innerHTML = localStorage.getItem("allCards");
 }
 
 // When the user clicks anywhere outside of the modal, close it
@@ -241,8 +239,7 @@ window.onclick = function(event) {
 function sub(event){
     event.preventDefault();
     modal.style.display = "block";
-    /*setTimeout(function(){ 
-        //Aqui coloca a função para ir para a ultima tela
+    setTimeout(function(){
         window.location.href = "list.html";
-    }, 10000);*/
+    }, 10000);
 }

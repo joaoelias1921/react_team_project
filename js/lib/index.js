@@ -1,7 +1,9 @@
+//calls necessary functions on window load
 window.onload = function(){
     populateDays();
     populateMonths();
     populateYears();
+    showBirthdateFields()
     loadLocalStorage();
 };
 

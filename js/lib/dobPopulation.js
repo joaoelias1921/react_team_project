@@ -4,19 +4,28 @@ let $ = document.querySelector.bind(document);
 let day = $("#day");
 let month = $("#month");
 let year = $("#year");
+let selects = document.querySelectorAll("select");
 
-day.addEventListener("change", () => {
-    month.removeAttribute("disabled");
-});
+//makes next birthdate field enabled once you select something
+function nextBirthdateField() {
+    for (let i = 1; i < selects.length; i++) {
+        if(selects[i-1].value != "") selects[i].removeAttribute("disabled");
+    }
+}
 
-month.addEventListener("change", () => {
-    year.removeAttribute("disabled");
-});
+//if fields were already filled, they will be available for change
+function showBirthdateFields() {
+    if(localStorage.getItem(year.name)) {
+        for(select of selects) {
+            select.removeAttribute("disabled");
+        }
+    }
+}
 
+//populates the select element with days (option tags)
 function populateDays() {
-    let option = '<option value="">Day</option>';
+    let option = `<option value="">Day</option>`;
 
-    //populates the select element with days (option)
     for (let i = 1; i <= days[0]; i++){
         option += `<option value="${i}">${i}</option>`;
     }
@@ -24,12 +33,12 @@ function populateDays() {
     day.insertAdjacentHTML("beforeend", option);
 }
 
+//populates the select element with months (option tags)
 function populateMonths() {
     month.innerHTML = "";
     
     let option = `<option value="">Month</option>`;
 
-    //populates the select element with months (option)
     for(let i = 1; i <= 12; i++) {
         option += `<option value="${i}">${i}</option>`;
     }
@@ -37,11 +46,10 @@ function populateMonths() {
     month.insertAdjacentHTML("beforeend", option);
 }
 
-
+//populates the select element with years (option tags)
 function populateYears() {
     let option = `<option value="">Year</option>`;
 
-    //populates the select element with years (option)
     for (let i = 1930; i <= new Date().getFullYear(); i++) {
         option += `<option value="${i}">${i}</option>`;
     }
@@ -49,6 +57,7 @@ function populateYears() {
     year.insertAdjacentHTML("beforeend", option);
 }
 
+//checks for leap year
 function isLeapYear(year) {
     year = parseInt(year);
     if (year % 4 != 0) {
@@ -62,6 +71,7 @@ function isLeapYear(year) {
 	}
 }
 
+//necessary if the year is changed
 function change_year(select) {
     if(isLeapYear(select.value)) {
 		days[1] = 29;		    
@@ -88,8 +98,9 @@ function change_year(select) {
     }
 
     ageCalculator();
-  }
+}
 
+//necessary if the month is changed
 function change_month(select) {
     let val = day.value;
 
@@ -113,6 +124,7 @@ function change_month(select) {
     }
 }
 
+//calculates the age based on the values passed for day, month and year
 function ageCalculator() {
     let userinput = `${year.value}-${month.value}-${day.value}`;
     let dob = new Date(userinput);

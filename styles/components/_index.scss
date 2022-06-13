@@ -424,7 +424,7 @@
                     font-size: 1.2rem;
                     padding-top: 20px;
                     font-weight: bold;
-                    margin-bottom: 5%
+                    margin-bottom: 5%;
                 }
                 li {
                     width: 100%;
@@ -475,6 +475,14 @@
 
 #row{
     order: -1;
+}
+
+.error-message {
+    color: red;
+    width: 100%;
+    text-align: left;
+    margin-top: 2%;
+    font-size: 0.8rem;
 }
 
 @media screen and (max-width: 768px){

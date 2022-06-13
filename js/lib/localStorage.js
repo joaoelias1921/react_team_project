@@ -1,3 +1,4 @@
+//necessary variables used throughout the project
 let fullname = $("#full-name");
 let nickname = $("#nickname");
 let email = $("#email");
@@ -13,28 +14,44 @@ $(".form1").addEventListener("submit", (event) => {
     event.preventDefault();
 });
 
+//saves the data from the input fields to browser local storage
 function saveToLocalStorage(field) {
     if(field.value != "") localStorage.setItem(field.name, field.value);
 }
 
+//saves age data to local storage
 function saveAgeToLS() {
     localStorage.setItem("age", age.value);
 }
 
-$(".continue-btn").addEventListener("click", saveAgeToLS);
+//saves the checkbox state (checked or not) to local storage
+function saveCheckboxToLS(checkbox) {
+    localStorage.setItem(checkbox.name, checkbox.checked);
+}
 
-const loadLocalStorage = () => {
-    fullname.value = localStorage.getItem("fullname");
-    nickname.value = localStorage.getItem("nickname");
-    email.value = localStorage.getItem("email");
-    phone.value = localStorage.getItem("phone");
-    day.value = localStorage.getItem("dobDay");
-    month.value = localStorage.getItem("dobMonth");
-    year.value = localStorage.getItem("dobYear");
-    age.value = localStorage.getItem("age");
-    linkdin.value = localStorage.getItem("linkdin-link");
-    github.value = localStorage.getItem("github-link");
-    teamName.value = localStorage.getItem("teamName");
-    institution.value = localStorage.getItem("institution");
-    graduation.value = localStorage.getItem("graduation");
+//calls functions on button click
+$(".continue-btn").addEventListener("click", () => {
+    ageCalculator();
+    saveAgeToLS();
+});
+
+//loads all local storage information on every window load (called in index.js)
+function loadLocalStorage(){
+    let inputs = document.querySelectorAll("input");
+    let selects = document.querySelectorAll("select");
+    let termsCheck = $("#terms-check");
+
+    inputs.forEach((input) => {
+        input.value = localStorage.getItem(input.name);
+    });
+
+    selects.forEach((select) => {
+        if(!localStorage.getItem(select.name)){
+            return;
+        }else {
+            select.value = localStorage.getItem(select.name);
+        }        
+    })
+
+    termsCheck.checked = JSON.parse(localStorage.getItem("terms-check"))
 }
